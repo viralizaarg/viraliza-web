@@ -12,7 +12,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:32px;width:auto;object-fit:contain;mix-blend-mode:screen">
+    <img src="assets/img/logo/viraliza-logo.png" alt="Viraliza" style="height:34px;width:auto;object-fit:contain">
   </a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Inicio</a></li>
@@ -20,197 +20,117 @@
     <li><a href="automatizaciones.html">Automatizaciones</a></li>
     <li><a href="pantallas.html">Pantallas</a></li>
     <li><a href="diseno-web.html">Diseño Web</a></li>
-    <li><a href="https://wa.me/5493416641391" class="nav-cta" target="_blank">Contactar →</a></li>
+    <li><a href="https://wa.me/+541234567890" class="nav-cta" target="_blank">Contactar →</a></li>
   </ul>
   <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- ══ HERO SLIDER ══ -->
-<div id="heroSlider" style="position:relative;width:100%;height:92vh;min-height:560px;overflow:hidden;background:#090b0f">
+<div class="slider-section">
+  <div class="slideshow" id="heroSlider">
 
-  <div id="vslide-0" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;overflow:hidden">
-    <!-- imagen de fondo -->
-    <img src="assets/img/servicio/s3.webp" alt="Meta Ads — Publicidad Digital"
-         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.52);transition:transform 7s ease;transform:scale(1.03)">
-    <!-- overlay gradiente -->
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(160deg,rgba(9,11,15,.75) 0%,rgba(9,11,15,.2) 45%,rgba(9,11,15,.7) 100%)"></div>
-    <!-- gradiente abajo para texto -->
-    <div style="position:absolute;bottom:0;left:0;right:0;height:65%;background:linear-gradient(to top,rgba(9,11,15,.95) 0%,transparent 100%)"></div>
-    <!-- contenido -->
-    <div style="position:absolute;bottom:0;left:0;right:0;padding:clamp(1.5rem,4vw,3.5rem) clamp(1.5rem,5vw,3rem);z-index:2">
-      <div style="display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(255,139,0,.14);border:1px solid rgba(255,139,0,.3);border-radius:99px;font-size:.75rem;font-weight:700;color:#ff8b00;letter-spacing:.06em;margin-bottom:14px">📊 Publicidad Digital</div>
-      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2rem,5.5vw,4.5rem);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.04em;margin-bottom:12px;text-shadow:0 2px 24px rgba(0,0,0,.5)">Publicidad que<br><em>conecta y vende</em></h1>
-      <p style="font-size:clamp(.9rem,2vw,1.1rem);color:rgba(255,255,255,.72);max-width:520px;line-height:1.75;margin-bottom:22px">Campañas en Meta Ads, Google Ads y WhatsApp Business. Resultados reales desde el primer mes.</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="servicios.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:#ff8b00;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;border-radius:10px;text-decoration:none;transition:box-shadow .2s">Ver servicios →</a>
-        <a href="https://wa.me/5493416641391" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:transparent;color:rgba(255,255,255,.85);font-size:.9rem;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,.25);transition:background .2s">📲 Hablar con un asesor</a>
+    <!-- Slide 1 — Publicidad Digital -->
+    <div class="slide active" id="slide-0">
+      <img class="slide-img" src="assets/img/servicio/s1.webp" alt="Publicidad Digital">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-text">
+          <div class="slide-tag">Agencia Digital · Pergamino</div>
+          <h1 class="slide-title">Publicidad que<br><em>conecta y vende</em></h1>
+          <p class="slide-desc">Campañas en Meta Ads, Google Ads y TikTok. Resultados reales desde el primer mes.</p>
+          <div class="slide-actions">
+            <a href="servicios.html" class="btn-primary">Ver servicios <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="https://wa.me/message/DBCSCXKEEDMZA1" class="btn-secondary" target="_blank">📲 Hablar con un asesor</a>
+          </div>
+        </div>
+        <div class="slide-dots" id="sliderDots"></div>
+      </div>
+      <div class="slide-progress" id="slideProgress"></div>
+    </div>
+
+    <!-- Slide 2 — Gestión de Redes -->
+    <div class="slide" id="slide-1">
+      <img class="slide-img" src="assets/img/servicio/s6.webp" alt="Gestión de Redes">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-text">
+          <div class="slide-tag">Social Media</div>
+          <h1 class="slide-title">Tu marca activa<br><em>todos los días</em></h1>
+          <p class="slide-desc">Gestión de redes, contenido de impacto y comunidad que crece. Instagram, TikTok, Facebook y más.</p>
+          <div class="slide-actions">
+            <a href="servicios.html" class="btn-primary">Gestión de redes <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="https://wa.me/message/DBCSCXKEEDMZA1" class="btn-secondary" target="_blank">📲 Consultanos</a>
+          </div>
+        </div>
+        <div class="slide-dots" id="sliderDots1"></div>
       </div>
     </div>
-  </div>
 
-  <div id="vslide-1" style="position:absolute;top:0;left:0;width:100%;height:100%;display:none;overflow:hidden">
-    <!-- imagen de fondo -->
-    <img src="assets/img/servicio/s7.webp" alt="Gestión de Redes Sociales"
-         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.52);transition:transform 7s ease;transform:scale(1.03)">
-    <!-- overlay gradiente -->
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(160deg,rgba(9,11,15,.75) 0%,rgba(9,11,15,.2) 45%,rgba(9,11,15,.7) 100%)"></div>
-    <!-- gradiente abajo para texto -->
-    <div style="position:absolute;bottom:0;left:0;right:0;height:65%;background:linear-gradient(to top,rgba(9,11,15,.95) 0%,transparent 100%)"></div>
-    <!-- contenido -->
-    <div style="position:absolute;bottom:0;left:0;right:0;padding:clamp(1.5rem,4vw,3.5rem) clamp(1.5rem,5vw,3rem);z-index:2">
-      <div style="display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(255,139,0,.14);border:1px solid rgba(255,139,0,.3);border-radius:99px;font-size:.75rem;font-weight:700;color:#ff8b00;letter-spacing:.06em;margin-bottom:14px">📱 Social Media</div>
-      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2rem,5.5vw,4.5rem);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.04em;margin-bottom:12px;text-shadow:0 2px 24px rgba(0,0,0,.5)">Tu marca activa<br><em>todos los días</em></h1>
-      <p style="font-size:clamp(.9rem,2vw,1.1rem);color:rgba(255,255,255,.72);max-width:520px;line-height:1.75;margin-bottom:22px">Contenido, comunidad y estrategia en todas las plataformas. Instagram, WhatsApp Business, Facebook y más.</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="servicios.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:#ff8b00;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;border-radius:10px;text-decoration:none;transition:box-shadow .2s">Ver servicios →</a>
-        <a href="https://wa.me/5493416641391" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:transparent;color:rgba(255,255,255,.85);font-size:.9rem;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,.25);transition:background .2s">📲 Consultanos</a>
+    <!-- Slide 3 — Pantallas LED -->
+    <div class="slide" id="slide-2">
+      <img class="slide-img" src="assets/img/pantallas/p6.jpeg" alt="Pantallas LED">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-text">
+          <div class="slide-tag">Publicidad Exterior</div>
+          <h1 class="slide-title">Pantallas LED<br><em>donde más se ve</em></h1>
+          <p class="slide-desc">Tu marca en los puntos de mayor tráfico de la región. Visibilidad máxima, 24 horas al día.</p>
+          <div class="slide-actions">
+            <a href="pantallas.html" class="btn-primary">Ver ubicaciones <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="https://wa.me/message/DBCSCXKEEDMZA1" class="btn-secondary" target="_blank">📲 Consultar precios</a>
+          </div>
+        </div>
+        <div class="slide-dots" id="sliderDots2"></div>
       </div>
     </div>
-  </div>
 
-  <div id="vslide-2" style="position:absolute;top:0;left:0;width:100%;height:100%;display:none;overflow:hidden">
-    <!-- imagen de fondo -->
-    <img src="assets/img/servicio/s9.webp" alt="Pantallas LED Digitales"
-         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.52);transition:transform 7s ease;transform:scale(1.03)">
-    <!-- overlay gradiente -->
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(160deg,rgba(9,11,15,.75) 0%,rgba(9,11,15,.2) 45%,rgba(9,11,15,.7) 100%)"></div>
-    <!-- gradiente abajo para texto -->
-    <div style="position:absolute;bottom:0;left:0;right:0;height:65%;background:linear-gradient(to top,rgba(9,11,15,.95) 0%,transparent 100%)"></div>
-    <!-- contenido -->
-    <div style="position:absolute;bottom:0;left:0;right:0;padding:clamp(1.5rem,4vw,3.5rem) clamp(1.5rem,5vw,3rem);z-index:2">
-      <div style="display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(255,139,0,.14);border:1px solid rgba(255,139,0,.3);border-radius:99px;font-size:.75rem;font-weight:700;color:#ff8b00;letter-spacing:.06em;margin-bottom:14px">🖥️ Publicidad Exterior</div>
-      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2rem,5.5vw,4.5rem);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.04em;margin-bottom:12px;text-shadow:0 2px 24px rgba(0,0,0,.5)">Pantallas LED<br><em>donde más se ve</em></h1>
-      <p style="font-size:clamp(.9rem,2vw,1.1rem);color:rgba(255,255,255,.72);max-width:520px;line-height:1.75;margin-bottom:22px">Tu marca en los puntos de mayor tráfico de la región. Visibilidad máxima, 24 horas al día.</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="pantallas.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:#ff8b00;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;border-radius:10px;text-decoration:none;transition:box-shadow .2s">Ver ubicaciones →</a>
-        <a href="https://wa.me/5493416641391" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:transparent;color:rgba(255,255,255,.85);font-size:.9rem;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,.25);transition:background .2s">📲 Consultar precios</a>
+    <!-- Slide 4 — Automatizaciones -->
+    <div class="slide" id="slide-3">
+      <img class="slide-img" src="assets/img/automati/a4.jpeg" alt="Automatizaciones">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-text">
+          <div class="slide-tag">Automatizaciones</div>
+          <h1 class="slide-title">Tu negocio en<br><em>piloto automático</em></h1>
+          <p class="slide-desc">Bots de WhatsApp, email automation y CRM integrado. Respondé y vendé mientras dormís.</p>
+          <div class="slide-actions">
+            <a href="automatizaciones.html" class="btn-primary">Ver automatizaciones <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="https://wa.me/message/DBCSCXKEEDMZA1" class="btn-secondary" target="_blank">📲 Pedir demo</a>
+          </div>
+        </div>
+        <div class="slide-dots" id="sliderDots3"></div>
       </div>
     </div>
-  </div>
 
-  <div id="vslide-3" style="position:absolute;top:0;left:0;width:100%;height:100%;display:none;overflow:hidden">
-    <!-- imagen de fondo -->
-    <img src="assets/img/automati/a4.jpeg" alt="Automatizaciones"
-         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.52);transition:transform 7s ease;transform:scale(1.03)">
-    <!-- overlay gradiente -->
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(160deg,rgba(9,11,15,.75) 0%,rgba(9,11,15,.2) 45%,rgba(9,11,15,.7) 100%)"></div>
-    <!-- gradiente abajo para texto -->
-    <div style="position:absolute;bottom:0;left:0;right:0;height:65%;background:linear-gradient(to top,rgba(9,11,15,.95) 0%,transparent 100%)"></div>
-    <!-- contenido -->
-    <div style="position:absolute;bottom:0;left:0;right:0;padding:clamp(1.5rem,4vw,3.5rem) clamp(1.5rem,5vw,3rem);z-index:2">
-      <div style="display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(255,139,0,.14);border:1px solid rgba(255,139,0,.3);border-radius:99px;font-size:.75rem;font-weight:700;color:#ff8b00;letter-spacing:.06em;margin-bottom:14px">⚙️ Automatizaciones</div>
-      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2rem,5.5vw,4.5rem);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.04em;margin-bottom:12px;text-shadow:0 2px 24px rgba(0,0,0,.5)">Tu negocio en<br><em>piloto automático</em></h1>
-      <p style="font-size:clamp(.9rem,2vw,1.1rem);color:rgba(255,255,255,.72);max-width:520px;line-height:1.75;margin-bottom:22px">Bots de WhatsApp, email automation y CRM integrado. Respondé y vendé mientras dormís.</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="automatizaciones.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:#ff8b00;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;border-radius:10px;text-decoration:none;transition:box-shadow .2s">Ver automatizaciones →</a>
-        <a href="https://wa.me/5493416641391" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:transparent;color:rgba(255,255,255,.85);font-size:.9rem;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,.25);transition:background .2s">📲 Consultanos</a>
+    <!-- Slide 5 — Diseño Web -->
+    <div class="slide" id="slide-4">
+      <img class="slide-img" src="assets/img/desarrollo/d3.jpeg" alt="Diseño Web">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-text">
+          <div class="slide-tag">Diseño Web</div>
+          <h1 class="slide-title">Sitios que<br><em>convierten visitas</em></h1>
+          <p class="slide-desc">Landing pages, sitios corporativos y tiendas online. Modernos, rápidos y orientados a vender.</p>
+          <div class="slide-actions">
+            <a href="diseno-web.html" class="btn-primary">Ver proyectos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="https://wa.me/message/DBCSCXKEEDMZA1" class="btn-secondary" target="_blank">📲 Pedir presupuesto</a>
+          </div>
+        </div>
+        <div class="slide-dots" id="sliderDots4"></div>
       </div>
     </div>
-  </div>
 
-  <div id="vslide-4" style="position:absolute;top:0;left:0;width:100%;height:100%;display:none;overflow:hidden">
-    <!-- imagen de fondo -->
-    <img src="assets/img/servicio/s1.webp" alt="Diseño Web Viraliza"
-         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.52);transition:transform 7s ease;transform:scale(1.03)">
-    <!-- overlay gradiente -->
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(160deg,rgba(9,11,15,.75) 0%,rgba(9,11,15,.2) 45%,rgba(9,11,15,.7) 100%)"></div>
-    <!-- gradiente abajo para texto -->
-    <div style="position:absolute;bottom:0;left:0;right:0;height:65%;background:linear-gradient(to top,rgba(9,11,15,.95) 0%,transparent 100%)"></div>
-    <!-- contenido -->
-    <div style="position:absolute;bottom:0;left:0;right:0;padding:clamp(1.5rem,4vw,3.5rem) clamp(1.5rem,5vw,3rem);z-index:2">
-      <div style="display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(255,139,0,.14);border:1px solid rgba(255,139,0,.3);border-radius:99px;font-size:.75rem;font-weight:700;color:#ff8b00;letter-spacing:.06em;margin-bottom:14px">🎨 Diseño Web</div>
-      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2rem,5.5vw,4.5rem);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.04em;margin-bottom:12px;text-shadow:0 2px 24px rgba(0,0,0,.5)">Sitios que<br><em>convierten visitas</em></h1>
-      <p style="font-size:clamp(.9rem,2vw,1.1rem);color:rgba(255,255,255,.72);max-width:520px;line-height:1.75;margin-bottom:22px">Landing pages, sitios corporativos y tiendas online. Modernos, rápidos y orientados a vender.</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="diseno-web.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:#ff8b00;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;border-radius:10px;text-decoration:none;transition:box-shadow .2s">Ver proyectos →</a>
-        <a href="https://wa.me/5493416641391" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:transparent;color:rgba(255,255,255,.85);font-size:.9rem;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,.25);transition:background .2s">📲 Pedir presupuesto</a>
-      </div>
-    </div>
+    <!-- Arrows -->
+    <button class="slide-arrow prev" onclick="sliderMove(-1)" aria-label="Anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="slide-arrow next" onclick="sliderMove(1)" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
   </div>
-
-  <!-- Flecha izquierda -->
-  <button onclick="vsMove(-1)" aria-label="Anterior"
-    style="position:absolute;left:20px;top:50%;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:background .2s">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-  </button>
-  <!-- Flecha derecha -->
-  <button onclick="vsMove(1)" aria-label="Siguiente"
-    style="position:absolute;right:20px;top:50%;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:background .2s">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
-  </button>
-  <!-- Dots -->
-  <div id="vsDots" style="position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10;align-items:center"></div>
-  <!-- Barra de progreso -->
-  <div id="vsBar" style="position:absolute;bottom:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#ff8b00,#0086ff);z-index:10;transition:none"></div>
 </div>
 
-<script>
-(function(){
-  var total = 5;
-  var cur = 0;
-  var dur = 5500;
-  var timer = null;
-  var dots = [];
-
-  // Build dots
-  var dc = document.getElementById('vsDots');
-  for (var i = 0; i < total; i++) {
-    var d = document.createElement('div');
-    d.style.cssText = 'width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.35);cursor:pointer;transition:width .4s,background .4s,opacity .4s';
-    (function(idx){ d.addEventListener('click', function(){ vsGo(idx); }); })(i);
-    dc.appendChild(d);
-    dots.push(d);
-  }
-
-  function activeDot(n) {
-    dots.forEach(function(d,i){
-      if (i===n) { d.style.width='28px'; d.style.background='#ff8b00'; }
-      else { d.style.width='8px'; d.style.background='rgba(255,255,255,.35)'; }
-    });
-  }
-
-  function startBar() {
-    var bar = document.getElementById('vsBar');
-    if (!bar) return;
-    bar.style.transition = 'none';
-    bar.style.width = '0%';
-    setTimeout(function(){
-      bar.style.transition = 'width ' + dur + 'ms linear';
-      bar.style.width = '100%';
-    }, 50);
-  }
-
-  function vsGo(n) {
-    document.getElementById('vslide-' + cur).style.display = 'none';
-    cur = ((n % total) + total) % total;
-    document.getElementById('vslide-' + cur).style.display = 'block';
-    activeDot(cur);
-    startBar();
-    clearInterval(timer);
-    timer = setInterval(function(){ vsGo(cur + 1); }, dur);
-  }
-
-  window.vsMove = function(dir){ vsGo(cur + dir); };
-
-  // Swipe
-  var tx = 0;
-  var sl = document.getElementById('heroSlider');
-  if (sl) {
-    sl.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; }, {passive:true});
-    sl.addEventListener('touchend', function(e){
-      var diff = tx - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 50) vsGo(cur + (diff > 0 ? 1 : -1));
-    });
-  }
-
-  activeDot(0);
-  startBar();
-  timer = setInterval(function(){ vsGo(cur + 1); }, dur);
-})();
-</script>
-
-
-<!-- LOGOS -->EE ══ -->
+<!-- ══ MARQUEE ══ -->
 
 <!-- LOGOS -->
 <div class="logos-section">
@@ -219,7 +139,7 @@
     <div class="logos-track">
       <div class="logo-pill"><div class="logo-pill-icon" style="background:#e8f4fd">📘</div> Meta Ads</div>
       <div class="logo-pill"><div class="logo-pill-icon" style="background:#fef9e7">🔍</div> Google Ads</div>
-      <div class="logo-pill"><div class="logo-pill-icon" style="background:#fdf2f8">💬</div> WhatsApp Business</div>
+      <div class="logo-pill"><div class="logo-pill-icon" style="background:#fdf2f8">🎵</div> TikTok</div>
       <div class="logo-pill"><div class="logo-pill-icon" style="background:#e8f8f5">📊</div> Analytics</div>
       <div class="logo-pill"><div class="logo-pill-icon" style="background:#f4ecf7">⚙️</div> Zapier</div>
       <div class="logo-pill"><div class="logo-pill-icon" style="background:#eafaf1">💳</div> MercadoPago</div>
@@ -237,16 +157,16 @@
     </div>
     <div class="services-photo-grid">
         <a href="servicios.html" class="sphoto-card">
-          <img src="assets/img/servicio/s3.webp" alt="Publicidad Digital" loading="lazy">
+          <img src="assets/img/servicio/s1.webp" alt="Publicidad Digital" loading="lazy">
           <div class="sphoto-card-overlay">
             <div class="sphoto-icon">📣</div>
             <div class="sphoto-title">Publicidad Digital</div>
-            <div class="sphoto-desc">Meta Ads, Google Ads y WhatsApp Business. Máximo retorno de inversión.</div>
+            <div class="sphoto-desc">Meta Ads, Google Ads y TikTok. Máximo retorno de inversión.</div>
             <div class="sphoto-link">Ver servicio →</div>
           </div>
         </a>
         <a href="servicios.html" class="sphoto-card">
-          <img src="assets/img/servicio/s7.webp" alt="Gestión de Redes" loading="lazy">
+          <img src="assets/img/servicio/s6.webp" alt="Gestión de Redes" loading="lazy">
           <div class="sphoto-card-overlay">
             <div class="sphoto-icon">📱</div>
             <div class="sphoto-title">Gestión de Redes</div>
@@ -264,7 +184,7 @@
           </div>
         </a>
         <a href="pantallas.html" class="sphoto-card">
-          <img src="assets/img/servicio/s2.jpeg" alt="Pantallas LED Viraliza" loading="lazy">
+          <img src="assets/img/pantallas/p6.jpeg" alt="Pantallas LED" loading="lazy">
           <div class="sphoto-card-overlay">
             <div class="sphoto-icon">🖥️</div>
             <div class="sphoto-title">Pantallas Digitales</div>
@@ -273,7 +193,7 @@
           </div>
         </a>
         <a href="diseno-web.html" class="sphoto-card">
-          <img src="assets/img/servicio/s1.webp" alt="Diseño Web" loading="lazy">
+          <img src="assets/img/desarrollo/d3.jpeg" alt="Diseño Web" loading="lazy">
           <div class="sphoto-card-overlay">
             <div class="sphoto-icon">🎨</div>
             <div class="sphoto-title">Diseño Web</div>
@@ -282,7 +202,7 @@
           </div>
         </a>
         <a href="servicios.html" class="sphoto-card">
-          <img src="assets/img/servicio/s4.webp" alt="Equipo Viraliza" loading="lazy">
+          <img src="assets/img/servicio/s4.webp" alt="Reportes y Analytics" loading="lazy">
           <div class="sphoto-card-overlay">
             <div class="sphoto-icon">📊</div>
             <div class="sphoto-title">Reportes & Analytics</div>
@@ -369,24 +289,24 @@
         <div class="test-stars">★★★★★</div>
         <p class="test-text">"Desde que empezamos con Viraliza, nuestras ventas online crecieron un 180% en 4 meses. El equipo es muy profesional y siempre está disponible."</p>
         <div class="test-author">
-          <div class="test-avatar" style="background:#5b4cf5">VI</div>
-          <div><div class="test-name">Verónica Iraola</div></div>
+          <div class="test-avatar" style="background:#5b4cf5">ML</div>
+          <div><div class="test-name">Martina López</div><div class="test-role">Dueña · Boutique Mia</div></div>
         </div>
       </div>
       <div class="test-card fade-in fd2">
         <div class="test-stars">★★★★★</div>
         <p class="test-text">"El bot de WhatsApp que nos instalaron cambió todo. Respondemos consultas automáticamente y nuestras ventas no paran. Altamente recomendados."</p>
         <div class="test-author">
-          <div class="test-avatar" style="background:#06b6d4">DM</div>
-          <div><div class="test-name">Damián Mendoza</div></div>
+          <div class="test-avatar" style="background:#06b6d4">CR</div>
+          <div><div class="test-name">Carlos Rodríguez</div><div class="test-role">Gerente · Ferretería El Perno</div></div>
         </div>
       </div>
       <div class="test-card fade-in fd3">
         <div class="test-stars">★★★★★</div>
         <p class="test-text">"Contraté el diseño web y quedé sorprendida. El sitio es hermoso, rápido y ya me generó nuevos clientes en la primera semana de lanzamiento."</p>
         <div class="test-author">
-          <div class="test-avatar" style="background:#ec4899">ES</div>
-          <div><div class="test-name">Estela Sinizza</div></div>
+          <div class="test-avatar" style="background:#ec4899">SP</div>
+          <div><div class="test-name">Sofía Pereyra</div><div class="test-role">Directora · Centro de Estética Bloom</div></div>
         </div>
       </div>
     </div>
@@ -414,7 +334,7 @@
           <div class="plan-feat">Reporte mensual</div>
           <div class="plan-feat">Soporte por WhatsApp</div>
         </div>
-        <a href="https://wa.me/5493416641391" class="btn-plan" target="_blank">Consultar precio</a>
+        <a href="https://wa.me/+541234567890" class="btn-plan" target="_blank">Consultar precio</a>
       </div>
       <div class="plan-card featured fade-in fd2">
         <div class="plan-badge-top">⭐ Más elegido</div>
@@ -430,7 +350,7 @@
           <div class="plan-feat">Diseño gráfico incluido</div>
           <div class="plan-feat">Reportes semanales</div>
         </div>
-        <a href="https://wa.me/5493416641391" class="btn-plan white" target="_blank">Consultar precio</a>
+        <a href="https://wa.me/+541234567890" class="btn-plan white" target="_blank">Consultar precio</a>
       </div>
       <div class="plan-card fade-in fd3">
         <div class="plan-name">Pro</div>
@@ -445,7 +365,7 @@
           <div class="plan-feat">Pantallas digitales</div>
           <div class="plan-feat">Asesor dedicado</div>
         </div>
-        <a href="https://wa.me/5493416641391" class="btn-plan" target="_blank">Consultar precio</a>
+        <a href="https://wa.me/+541234567890" class="btn-plan" target="_blank">Consultar precio</a>
       </div>
     </div>
   </div>
@@ -463,7 +383,10 @@
         <div class="faq-q">¿Cuánto tiempo tarda en verse resultados? <div class="faq-chevron">▾</div></div>
         <div class="faq-a">Los resultados varían según la industria y el presupuesto, pero en general nuestros clientes empiezan a ver mejoras desde el primer mes. Campañas de publicidad paga generan resultados más rápido que estrategias orgánicas.</div>
       </div>
-      
+      <div class="faq-item">
+        <div class="faq-q">¿Necesito firmar un contrato largo? <div class="faq-chevron">▾</div></div>
+        <div class="faq-a">No. Trabajamos con planes mensuales que se renuevan automáticamente. Podés discontinuar el servicio con 15 días de aviso previo, sin penalidades.</div>
+      </div>
       <div class="faq-item">
         <div class="faq-q">¿Cómo es el proceso de incorporación? <div class="faq-chevron">▾</div></div>
         <div class="faq-a">Primero hacemos una reunión de diagnóstico (gratis). Luego presentamos la estrategia y una vez aprobada, arrancamos en no más de 5 días hábiles.</div>
@@ -486,7 +409,7 @@
     <h2 class="cta-title">¿Listo para hacer crecer tu marca?</h2>
     <p class="cta-sub">Hablemos hoy. Primera consulta sin costo y sin compromiso.</p>
     <div class="cta-actions">
-      <a href="https://wa.me/5493416641391" class="btn-white" target="_blank">📲 Escribinos por WhatsApp</a>
+      <a href="https://wa.me/+541234567890" class="btn-white" target="_blank">📲 Escribinos por WhatsApp</a>
       <a href="servicios.html" class="btn-outline-white">Ver todos los servicios</a>
     </div>
   </div>
@@ -495,11 +418,10 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo" style="font-size:1.2rem;margin-bottom:.2rem">
-    <img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:32px;width:auto;object-fit:contain;mix-blend-mode:screen"></a>
+      <a href="index.html" class="nav-logo" style="font-size:1.2rem;margin-bottom:.2rem"><img src="assets/img/logo/viraliza-logo.png" alt="Viraliza" style="height:28px;width:auto;object-fit:contain"></a>
       <p>Agencia de publicidad digital especializada en hacer crecer marcas con estrategia, creatividad y tecnología.</p>
       <div class="footer-socials">
-        <a href="#" class="fsoc">📸</a><a href="#" class="fsoc">👍</a><a href="#" class="fsoc">💬</a><a href="#" class="fsoc">💼</a>
+        <a href="#" class="fsoc">📸</a><a href="#" class="fsoc">👍</a><a href="#" class="fsoc">🎵</a><a href="#" class="fsoc">💼</a>
       </div>
     </div>
     <div class="footer-col">
@@ -526,8 +448,8 @@
       <h4>Contacto</h4>
       <ul>
         <li><a href="mailto:info@publicidadviraliza.com">info@publicidadviraliza.com</a></li>
-        <li><a href="https://wa.me/5493416641391" target="_blank">WhatsApp</a></li>
-        <li><a href="#">Colón, Buenos Aires</a></li>
+        <li><a href="https://wa.me/+541234567890" target="_blank">WhatsApp</a></li>
+        <li><a href="#">Pergamino, Buenos Aires</a></li>
       </ul>
     </div>
   </div>
@@ -538,7 +460,7 @@
 </footer>
 
 <!-- WhatsApp flotante -->
-<a href="https://wa.me/5493416641391" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+<a href="https://wa.me/message/DBCSCXKEEDMZA1" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
   <span class="wa-tooltip">¡Hablemos por WhatsApp!</span>
   <div class="wa-btn">
     <div class="wa-pulse"></div>
