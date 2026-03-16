@@ -62,29 +62,47 @@
 <script>
 // Slider de Servicios
 (function() {
-  const total = 3, dur = 5500;
-  let cur = 0, timer = null;
-  const dc = document.getElementById('srvDots');
-  if (!dc) return;
-  for (let i = 0; i < total; i++) {
-    const d = document.createElement('button');
-    d.className = 'sdot' + (i === 0 ? ' active' : '');
-    d.addEventListener('click', () => go(i));
-    dc.appendChild(d);
+  var sliderEl = document.getElementById('srvSlider');
+  if (!sliderEl) return;
+  var slides = sliderEl.querySelectorAll('.slide');
+  var total = slides.length;
+  if (total === 0) return;
+  var current = 0, timer = null, dur = 5500;
+
+  var dotsEl = document.getElementById('srvDots');
+  var dotBtns = [];
+  if (dotsEl) {
+    for (var i = 0; i < total; i++) {
+      var d = document.createElement('button');
+      d.className = 'sdot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i+1));
+      (function(idx){ d.addEventListener('click', function(){ go(idx); }); })(i);
+      dotsEl.appendChild(d);
+      dotBtns.push(d);
+    }
   }
-  const bar = document.getElementById('srvProgress');
+
+  var bar = document.getElementById('srvProgress');
   function startBar() {
     if (!bar) return;
     bar.style.transition = 'none'; bar.style.width = '0%';
-    setTimeout(() => { bar.style.transition = `width ${dur}ms linear`; bar.style.width = '100%'; }, 30);
+    setTimeout(function(){ bar.style.transition = 'width ' + dur + 'ms linear'; bar.style.width = '100%'; }, 50);
   }
+
   function go(n) {
-    document.querySelectorAll('#srvSlider .slide').forEach((s,i) => s.classList.toggle('active', i===n));
-    document.querySelectorAll('#srvSlider .sdot').forEach((d,i) => d.classList.toggle('active', i===n));
-    cur = n; startBar(); clearInterval(timer); timer = setInterval(() => go((cur+1)%total), dur);
+    slides[current].classList.remove('active');
+    if (dotBtns[current]) dotBtns[current].classList.remove('active');
+    current = ((n % total) + total) % total;
+    slides[current].classList.add('active');
+    if (dotBtns[current]) dotBtns[current].classList.add('active');
+    startBar();
+    clearInterval(timer);
+    timer = setInterval(function(){ go(current + 1); }, dur);
   }
-  window.srvMove = dir => go((cur+dir+total)%total);
-  startBar(); timer = setInterval(() => go((cur+1)%total), dur);
+
+  window.srvMove = function(dir) { go(current + dir); };
+  startBar();
+  timer = setInterval(function(){ go(current + 1); }, dur);
 })();
 </script>
 
@@ -152,9 +170,7 @@
           <a href="https://wa.me/5493416641391" class="btn-secondary" target="_blank">📲 Consultanos</a>
         </div>
       </div>
-      <div class="slide-dots" id="srvDots"></div>
     </div>
-    <div class="slide-progress" id="srvProgress"></div>
   </div>
 
   <!-- Slide 2: Equipo trabajando -->
@@ -197,6 +213,8 @@
   <button class="slide-arrow next" onclick="srvMove(1)" aria-label="Siguiente">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
   </button>
+  <div id="srvDots" style="position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:.5rem;z-index:20"></div>
+  <div id="srvProgress" style="position:absolute;bottom:0;left:0;height:3px;background:linear-gradient(90deg,#ff8b00,#0086ff);width:0%;z-index:20"></div>
 </div>
 <!-- FIN SERVICIOS SLIDER -->
 

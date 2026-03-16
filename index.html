@@ -43,9 +43,7 @@
             <a href="https://wa.me/5493416641391" class="btn-secondary" target="_blank">📲 Hablar con un asesor</a>
           </div>
         </div>
-        <div class="slide-dots" id="sliderDots"></div>
       </div>
-      <div class="slide-progress" id="slideProgress"></div>
     </div>
 
     <!-- Slide 2 — Gestión de Redes -->
@@ -62,7 +60,6 @@
             <a href="https://wa.me/5493416641391" class="btn-secondary" target="_blank">📲 Consultanos</a>
           </div>
         </div>
-        <div class="slide-dots" id="sliderDots1"></div>
       </div>
     </div>
 
@@ -80,7 +77,6 @@
             <a href="https://wa.me/5493416641391" class="btn-secondary" target="_blank">📲 Consultar precios</a>
           </div>
         </div>
-        <div class="slide-dots" id="sliderDots2"></div>
       </div>
     </div>
 
@@ -98,7 +94,6 @@
             
           </div>
         </div>
-        <div class="slide-dots" id="sliderDots3"></div>
       </div>
     </div>
 
@@ -116,7 +111,6 @@
             <a href="https://wa.me/5493416641391" class="btn-secondary" target="_blank">📲 Pedir presupuesto</a>
           </div>
         </div>
-        <div class="slide-dots" id="sliderDots4"></div>
       </div>
     </div>
 
@@ -127,6 +121,10 @@
     <button class="slide-arrow next" onclick="sliderMove(1)" aria-label="Siguiente">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
     </button>
+
+    <!-- Dots y progress FUERA de los slides para que siempre sean visibles -->
+    <div id="sliderDots" style="position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:.5rem;z-index:20"></div>
+    <div id="slideProgress" style="position:absolute;bottom:0;left:0;height:3px;background:linear-gradient(90deg,#ff8b00,#0086ff);width:0%;z-index:20"></div>
   </div>
 </div>
 

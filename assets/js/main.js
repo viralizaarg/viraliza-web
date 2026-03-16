@@ -120,60 +120,72 @@ document.querySelectorAll('.faq-item').forEach(item => {
 
 // ─── HERO SLIDER ───
 (function() {
-  const total = 5;
-  let current = 0;
-  let timer = null;
-  const duration = 5500;
+  var sliderEl = document.getElementById('heroSlider');
+  if (!sliderEl) return;
 
-  // Build dots in first slide
-  const dotsContainer = document.getElementById('sliderDots');
-  if (!dotsContainer) return;
-  for (let i = 0; i < total; i++) {
-    const d = document.createElement('button');
-    d.className = 'sdot' + (i === 0 ? ' active' : '');
-    d.setAttribute('aria-label', 'Ir al slide ' + (i+1));
-    d.addEventListener('click', () => goTo(i));
-    dotsContainer.appendChild(d);
+  var slides = sliderEl.querySelectorAll('.slide');
+  var total = slides.length;
+  if (total === 0) return;
+
+  var current = 0;
+  var timer = null;
+  var duration = 5500;
+
+  // Build dots
+  var dotsEl = document.getElementById('sliderDots');
+  var dotBtns = [];
+  if (dotsEl) {
+    for (var i = 0; i < total; i++) {
+      var d = document.createElement('button');
+      d.style.cssText = 'width:8px;height:8px;border-radius:99px;border:none;cursor:pointer;padding:0;background:rgba(255,255,255,.3);transition:width .4s,background .4s';
+      d.setAttribute('aria-label', 'Slide ' + (i+1));
+      (function(idx){ d.addEventListener('click', function(){ goTo(idx); }); })(i);
+      dotsEl.appendChild(d);
+      dotBtns.push(d);
+    }
   }
 
-  // Progress bar animation
-  const bar = document.getElementById('slideProgress');
+  // Progress bar
+  var bar = document.getElementById('slideProgress');
   function startProgress() {
     if (!bar) return;
     bar.style.transition = 'none';
     bar.style.width = '0%';
-    setTimeout(() => {
-      bar.style.transition = `width ${duration}ms linear`;
+    setTimeout(function() {
+      bar.style.transition = 'width ' + duration + 'ms linear';
       bar.style.width = '100%';
-    }, 30);
+    }, 50);
   }
 
   function goTo(n) {
-    const slides = document.querySelectorAll('.slide');
-    const dots   = document.querySelectorAll('.sdot');
     slides[current].classList.remove('active');
-    if (dots[current]) dots[current].classList.remove('active');
-    current = (n + total) % total;
+    if (dotBtns[current]) {
+      dotBtns[current].style.width = '8px';
+      dotBtns[current].style.background = 'rgba(255,255,255,.3)';
+    }
+    current = ((n % total) + total) % total;
     slides[current].classList.add('active');
-    if (dots[current]) dots[current].classList.add('active');
+    if (dotBtns[current]) {
+      dotBtns[current].style.width = '28px';
+      dotBtns[current].style.background = '#ff8b00';
+    }
     startProgress();
     clearInterval(timer);
-    timer = setInterval(() => goTo(current + 1), duration);
+    timer = setInterval(function(){ goTo(current + 1); }, duration);
   }
 
   window.sliderMove = function(dir) { goTo(current + dir); };
 
-  // Touch/swipe support
-  let touchStartX = 0;
-  const slider = document.getElementById('heroSlider');
-  if (slider) {
-    slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-    slider.addEventListener('touchend', e => {
-      const diff = touchStartX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
-    });
-  }
+  // Swipe support
+  var touchX = 0;
+  sliderEl.addEventListener('touchstart', function(e){ touchX = e.touches[0].clientX; }, { passive: true });
+  sliderEl.addEventListener('touchend', function(e){
+    var diff = touchX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+  });
 
+  // Init
+  if (dotBtns[0]) { dotBtns[0].style.width = '28px'; dotBtns[0].style.background = '#ff8b00'; }
   startProgress();
-  timer = setInterval(() => goTo(current + 1), duration);
+  timer = setInterval(function(){ goTo(current + 1); }, duration);
 })();
