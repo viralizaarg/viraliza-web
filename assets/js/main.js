@@ -117,3 +117,63 @@ document.querySelectorAll('.faq-item').forEach(item => {
   document.addEventListener('mousedown', () => cursor.classList.add('clicking'));
   document.addEventListener('mouseup',   () => cursor.classList.remove('clicking'));
 })();
+
+// ─── HERO SLIDER ───
+(function() {
+  const total = 5;
+  let current = 0;
+  let timer = null;
+  const duration = 5500;
+
+  // Build dots in first slide
+  const dotsContainer = document.getElementById('sliderDots');
+  if (!dotsContainer) return;
+  for (let i = 0; i < total; i++) {
+    const d = document.createElement('button');
+    d.className = 'sdot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Ir al slide ' + (i+1));
+    d.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(d);
+  }
+
+  // Progress bar animation
+  const bar = document.getElementById('slideProgress');
+  function startProgress() {
+    if (!bar) return;
+    bar.style.transition = 'none';
+    bar.style.width = '0%';
+    setTimeout(() => {
+      bar.style.transition = `width ${duration}ms linear`;
+      bar.style.width = '100%';
+    }, 30);
+  }
+
+  function goTo(n) {
+    const slides = document.querySelectorAll('.slide');
+    const dots   = document.querySelectorAll('.sdot');
+    slides[current].classList.remove('active');
+    if (dots[current]) dots[current].classList.remove('active');
+    current = (n + total) % total;
+    slides[current].classList.add('active');
+    if (dots[current]) dots[current].classList.add('active');
+    startProgress();
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), duration);
+  }
+
+  window.sliderMove = function(dir) { goTo(current + dir); };
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  const slider = document.getElementById('heroSlider');
+  if (slider) {
+    slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    slider.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+    });
+  }
+
+  startProgress();
+  timer = setInterval(() => goTo(current + 1), duration);
+})();

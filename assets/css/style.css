@@ -11,6 +11,7 @@
   --accent-l:  rgba(255,139,0,.12);
   --accent2:   #0086ff;
   --accent2-l: rgba(0,134,255,.12);
+  --a2:        #0086ff;
   --accent3:   #ff8b00;
   --green:     #34d399;
   --pink:      #f472b6;
@@ -473,3 +474,215 @@ footer{padding:4rem clamp(1.5rem,5vw,3rem) 2rem;border-top:1px solid var(--borde
   transition: left .12s ease, top .12s ease;
 }
 .cursor-virus.clicking { transform: translate(-50%, -50%) scale(.82); }
+
+/* ═══════════════════════════════════
+   PHOTO SLIDER — HERO
+═══════════════════════════════════ */
+.slider-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* ── FULLSCREEN SLIDESHOW ── */
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 92vh;
+  min-height: 560px;
+  overflow: hidden;
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+}
+.slide.active { opacity: 1; pointer-events: auto; }
+.slide-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.04);
+  transition: transform 7s ease;
+  filter: brightness(.55);
+}
+.slide.active .slide-img { transform: scale(1); }
+
+/* glassmorphism overlay */
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(9,11,15,.72) 0%,
+    rgba(9,11,15,.3) 50%,
+    rgba(9,11,15,.65) 100%
+  );
+}
+
+/* content positioned over slide */
+.slide-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: clamp(2rem,5vw,4rem) clamp(1.5rem,5vw,3rem);
+  background: linear-gradient(to top, rgba(9,11,15,.9) 0%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.slide-text {}
+.slide-tag {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .3rem .9rem;
+  background: rgba(255,139,0,.15);
+  border: 1px solid rgba(255,139,0,.3);
+  border-radius: 99px;
+  font-size: .75rem; font-weight: 700; color: var(--accent);
+  letter-spacing: .07em; text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.slide-title {
+  font-family: var(--fh);
+  font-size: clamp(2rem,5vw,4rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.05;
+  letter-spacing: -.04em;
+  margin-bottom: .8rem;
+  text-shadow: 0 2px 24px rgba(0,0,0,.4);
+}
+.slide-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--accent), var(--a2, #0086ff));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.slide-desc {
+  font-size: clamp(.85rem,2vw,1rem);
+  color: rgba(255,255,255,.72);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.slide-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
+
+/* progress dots */
+.slide-dots {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+.sdot {
+  width: 8px; height: 8px;
+  border-radius: 99px;
+  background: rgba(255,255,255,.25);
+  cursor: pointer;
+  transition: width .4s ease, background .4s ease;
+}
+.sdot.active { width: 28px; background: var(--accent); }
+
+/* progress bar */
+.slide-progress {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--a2, #0086ff));
+  width: 0%;
+  transition: none;
+  z-index: 10;
+}
+
+/* nav arrows */
+.slide-arrow {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  z-index: 10;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background var(--tr), border-color var(--tr), transform var(--tr);
+  backdrop-filter: blur(8px);
+}
+.slide-arrow:hover {
+  background: rgba(255,139,0,.2);
+  border-color: rgba(255,139,0,.4);
+  transform: translateY(-50%) scale(1.08);
+}
+.slide-arrow.prev { left: 1.5rem; }
+.slide-arrow.next { right: 1.5rem; }
+.slide-arrow svg { width: 18px; height: 18px; stroke: #fff; }
+
+/* ── SERVICES PHOTO GRID below slider ── */
+.services-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+.sphoto-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+.sphoto-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease, filter .6s ease;
+  filter: brightness(.7);
+}
+.sphoto-card:hover img { transform: scale(1.06); filter: brightness(.5); }
+.sphoto-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(9,11,15,.85) 0%, transparent 55%);
+  display: flex; flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+.sphoto-icon {
+  width: 40px; height: 40px;
+  background: rgba(255,139,0,.15);
+  border: 1px solid rgba(255,139,0,.3);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: .8rem;
+  transition: background .3s;
+}
+.sphoto-card:hover .sphoto-icon { background: rgba(255,139,0,.3); }
+.sphoto-title {
+  font-family: var(--fh);
+  font-size: 1.05rem; font-weight: 700;
+  color: #fff; margin-bottom: .3rem;
+}
+.sphoto-desc { font-size: .82rem; color: rgba(255,255,255,.65); line-height: 1.6; }
+.sphoto-link {
+  display: inline-flex; align-items: center; gap: .3rem;
+  margin-top: .8rem; font-size: .8rem; font-weight: 700;
+  color: var(--accent);
+  opacity: 0; transform: translateX(-6px);
+  transition: opacity .3s, transform .3s;
+}
+.sphoto-card:hover .sphoto-link { opacity: 1; transform: translateX(0); }
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  .slideshow { height: 80vh; min-height: 480px; }
+  .slide-content { padding: 1.5rem; }
+  .slide-arrow { display: none; }
+}
+
+.nav-logo img { display:block; height:36px; width:auto; object-fit:contain; }

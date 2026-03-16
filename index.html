@@ -12,8 +12,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <div class="logo-icon">⚡</div>
-    Viraliza
+    <img src="assets/img/logo/viraliza-logo.png" alt="Viraliza" style="height:34px;width:auto;object-fit:contain">
   </a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Inicio</a></li>
@@ -26,64 +25,112 @@
   <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-dots"></div>
-  <div class="hero-content">
-    <div class="badge">🚀 Agencia Digital · Pergamino, Buenos Aires</div>
-    <h1>La publicidad digital<br>que <em>dispara</em> tu marca</h1>
-    <p class="hero-sub">Estrategia, contenido, automatizaciones y diseño web todo en un solo lugar. Nos ocupamos de tu presencia digital para que vos te enfoqués en crecer.</p>
-    <div class="hero-actions">
-      <a href="servicios.html" class="btn-primary">
-        Ver servicios
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="https://wa.me/+541234567890" class="btn-secondary" target="_blank">📲 Hablar con un asesor</a>
+<!-- ══ HERO SLIDER ══ -->
+<div class="slider-section">
+  <div class="slideshow" id="heroSlider">
+
+    <!-- Slide 1 — Publicidad Digital -->
+    <div class="slide active" id="slide-0">
+      <img class="slide-img" src="assets/img/servicio/s1.webp" alt="Publicidad Digital">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-text">
+          <div class="slide-tag">Agencia Digital · Pergamino</div>
+          <h1 class="slide-title">Publicidad que<br><em>conecta y vende</em></h1>
+          <p class="slide-desc">Campañas en Meta Ads, Google Ads y TikTok. Resultados reales desde el primer mes.</p>
+          <div class="slide-actions">
+            <a href="servicios.html" class="btn-primary">Ver servicios <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="https://wa.me/message/DBCSCXKEEDMZA1" class="btn-secondary" target="_blank">📲 Hablar con un asesor</a>
+          </div>
+        </div>
+        <div class="slide-dots" id="sliderDots"></div>
+      </div>
+      <div class="slide-progress" id="slideProgress"></div>
     </div>
-    <p class="hero-note">✓ Sin contratos largos &nbsp;·&nbsp; ✓ Resultados desde el primer mes &nbsp;·&nbsp; ✓ Soporte en WhatsApp</p>
-    <!-- DASHBOARD PREVIEW -->
-    <div class="hero-visual">
-      <div class="dash-bar">
-        <div class="dash-dots"><div class="dash-dot r"></div><div class="dash-dot y"></div><div class="dash-dot g"></div></div>
-        <span class="dash-title">Dashboard Viraliza — Rendimiento de campañas</span>
-      </div>
-      <div class="dash-grid">
-        <div class="dash-card">
-          <div class="dash-card-label">Alcance mensual</div>
-          <div class="dash-card-val">248K</div>
-          <div class="dash-card-trend trend-up">↑ +34% este mes</div>
+
+    <!-- Slide 2 — Gestión de Redes -->
+    <div class="slide" id="slide-1">
+      <img class="slide-img" src="assets/img/servicio/s6.webp" alt="Gestión de Redes">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-text">
+          <div class="slide-tag">Social Media</div>
+          <h1 class="slide-title">Tu marca activa<br><em>todos los días</em></h1>
+          <p class="slide-desc">Gestión de redes, contenido de impacto y comunidad que crece. Instagram, TikTok, Facebook y más.</p>
+          <div class="slide-actions">
+            <a href="servicios.html" class="btn-primary">Gestión de redes <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="https://wa.me/message/DBCSCXKEEDMZA1" class="btn-secondary" target="_blank">📲 Consultanos</a>
+          </div>
         </div>
-        <div class="dash-card">
-          <div class="dash-card-label">Conversiones</div>
-          <div class="dash-card-val">1,847</div>
-          <div class="dash-card-trend trend-up">↑ +22% vs mes ant.</div>
-        </div>
-        <div class="dash-card">
-          <div class="dash-card-label">ROAS promedio</div>
-          <div class="dash-card-val">4.8x</div>
-          <div class="dash-card-trend trend-up">↑ Por encima del promedio</div>
-        </div>
-      </div>
-      <div class="dash-chart">
-        <div class="chart-bars">
-          <div class="bar" style="height:40%"></div>
-          <div class="bar" style="height:55%"></div>
-          <div class="bar b2" style="height:48%"></div>
-          <div class="bar" style="height:70%"></div>
-          <div class="bar" style="height:62%"></div>
-          <div class="bar b2" style="height:80%"></div>
-          <div class="bar active" style="height:95%"></div>
-          <div class="bar" style="height:72%"></div>
-          <div class="bar b2" style="height:85%"></div>
-          <div class="bar active" style="height:100%"></div>
-          <div class="bar" style="height:90%"></div>
-          <div class="bar b2" style="height:94%"></div>
-        </div>
-        <div class="chart-label"><span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span><span>May</span><span>Jun</span><span>Jul</span><span>Ago</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dic</span></div>
+        <div class="slide-dots" id="sliderDots1"></div>
       </div>
     </div>
+
+    <!-- Slide 3 — Pantallas LED -->
+    <div class="slide" id="slide-2">
+      <img class="slide-img" src="assets/img/pantallas/p6.jpeg" alt="Pantallas LED">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-text">
+          <div class="slide-tag">Publicidad Exterior</div>
+          <h1 class="slide-title">Pantallas LED<br><em>donde más se ve</em></h1>
+          <p class="slide-desc">Tu marca en los puntos de mayor tráfico de la región. Visibilidad máxima, 24 horas al día.</p>
+          <div class="slide-actions">
+            <a href="pantallas.html" class="btn-primary">Ver ubicaciones <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="https://wa.me/message/DBCSCXKEEDMZA1" class="btn-secondary" target="_blank">📲 Consultar precios</a>
+          </div>
+        </div>
+        <div class="slide-dots" id="sliderDots2"></div>
+      </div>
+    </div>
+
+    <!-- Slide 4 — Automatizaciones -->
+    <div class="slide" id="slide-3">
+      <img class="slide-img" src="assets/img/automati/a4.jpeg" alt="Automatizaciones">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-text">
+          <div class="slide-tag">Automatizaciones</div>
+          <h1 class="slide-title">Tu negocio en<br><em>piloto automático</em></h1>
+          <p class="slide-desc">Bots de WhatsApp, email automation y CRM integrado. Respondé y vendé mientras dormís.</p>
+          <div class="slide-actions">
+            <a href="automatizaciones.html" class="btn-primary">Ver automatizaciones <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="https://wa.me/message/DBCSCXKEEDMZA1" class="btn-secondary" target="_blank">📲 Pedir demo</a>
+          </div>
+        </div>
+        <div class="slide-dots" id="sliderDots3"></div>
+      </div>
+    </div>
+
+    <!-- Slide 5 — Diseño Web -->
+    <div class="slide" id="slide-4">
+      <img class="slide-img" src="assets/img/desarrollo/d3.jpeg" alt="Diseño Web">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-text">
+          <div class="slide-tag">Diseño Web</div>
+          <h1 class="slide-title">Sitios que<br><em>convierten visitas</em></h1>
+          <p class="slide-desc">Landing pages, sitios corporativos y tiendas online. Modernos, rápidos y orientados a vender.</p>
+          <div class="slide-actions">
+            <a href="diseno-web.html" class="btn-primary">Ver proyectos <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="https://wa.me/message/DBCSCXKEEDMZA1" class="btn-secondary" target="_blank">📲 Pedir presupuesto</a>
+          </div>
+        </div>
+        <div class="slide-dots" id="sliderDots4"></div>
+      </div>
+    </div>
+
+    <!-- Arrows -->
+    <button class="slide-arrow prev" onclick="sliderMove(-1)" aria-label="Anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="slide-arrow next" onclick="sliderMove(1)" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
   </div>
-</section>
+</div>
+
+<!-- ══ MARQUEE ══ -->
 
 <!-- LOGOS -->
 <div class="logos-section">
@@ -108,44 +155,62 @@
       <h2 class="section-title">Todo lo que necesitás<br>para <em>crecer online</em></h2>
       <p class="section-sub">Una solución completa para tu presencia digital. Sin tener que contratar 5 agencias distintas.</p>
     </div>
-    <div class="features-grid">
-      <a href="servicios.html" class="feat-card fade-in fd1">
-        <div class="feat-icon purple">📣</div>
-        <div class="feat-title">Publicidad Digital</div>
-        <div class="feat-desc">Campañas en Meta Ads, Google Ads y TikTok Ads. Gestionamos tu presupuesto para maximizar el retorno.</div>
-        <div class="feat-link">Ver servicio →</div>
-      </a>
-      <a href="servicios.html" class="feat-card fade-in fd2">
-        <div class="feat-icon cyan">📱</div>
-        <div class="feat-title">Gestión de Redes Sociales</div>
-        <div class="feat-desc">Contenido, comunidad y estrategia en Instagram, Facebook, TikTok y LinkedIn. Tu marca activa todos los días.</div>
-        <div class="feat-link">Ver servicio →</div>
-      </a>
-      <a href="automatizaciones.html" class="feat-card fade-in fd3">
-        <div class="feat-icon orange">⚙️</div>
-        <div class="feat-title">Automatizaciones</div>
-        <div class="feat-desc">Bots de WhatsApp, email automation y CRM. Trabajá inteligente y convertí leads en clientes automáticamente.</div>
-        <div class="feat-link">Ver automatizaciones →</div>
-      </a>
-      <a href="pantallas.html" class="feat-card fade-in fd1">
-        <div class="feat-icon green">🖥️</div>
-        <div class="feat-title">Pantallas Digitales</div>
-        <div class="feat-desc">Publicidad en pantallas LED en los puntos de mayor tráfico de la región. Máxima visibilidad offline.</div>
-        <div class="feat-link">Ver ubicaciones →</div>
-      </a>
-      <a href="diseno-web.html" class="feat-card fade-in fd2">
-        <div class="feat-icon pink">🎨</div>
-        <div class="feat-title">Diseño Web</div>
-        <div class="feat-desc">Sitios web modernos, rápidos y orientados a convertir. Landing pages, sitios corporativos y tiendas online.</div>
-        <div class="feat-link">Ver proyectos →</div>
-      </a>
-      <div class="feat-card fade-in fd3" style="background:var(--bg2)">
-        <div class="feat-icon blue">📊</div>
-        <div class="feat-title">Análisis & Reportes</div>
-        <div class="feat-desc">Reportes mensuales con métricas claras. Tomás decisiones basadas en datos reales, no suposiciones.</div>
-        <div class="feat-link" style="color:var(--accent)">Incluido en todos los planes →</div>
+    <div class="services-photo-grid">
+        <a href="servicios.html" class="sphoto-card">
+          <img src="assets/img/servicio/s1.webp" alt="Publicidad Digital" loading="lazy">
+          <div class="sphoto-card-overlay">
+            <div class="sphoto-icon">📣</div>
+            <div class="sphoto-title">Publicidad Digital</div>
+            <div class="sphoto-desc">Meta Ads, Google Ads y TikTok. Máximo retorno de inversión.</div>
+            <div class="sphoto-link">Ver servicio →</div>
+          </div>
+        </a>
+        <a href="servicios.html" class="sphoto-card">
+          <img src="assets/img/servicio/s6.webp" alt="Gestión de Redes" loading="lazy">
+          <div class="sphoto-card-overlay">
+            <div class="sphoto-icon">📱</div>
+            <div class="sphoto-title">Gestión de Redes</div>
+            <div class="sphoto-desc">Contenido, comunidad y estrategia en todas las plataformas.</div>
+            <div class="sphoto-link">Ver servicio →</div>
+          </div>
+        </a>
+        <a href="automatizaciones.html" class="sphoto-card">
+          <img src="assets/img/automati/a4.jpeg" alt="Automatizaciones" loading="lazy">
+          <div class="sphoto-card-overlay">
+            <div class="sphoto-icon">⚙️</div>
+            <div class="sphoto-title">Automatizaciones</div>
+            <div class="sphoto-desc">Bots, email automation y CRM. Trabajá más inteligente.</div>
+            <div class="sphoto-link">Ver automatizaciones →</div>
+          </div>
+        </a>
+        <a href="pantallas.html" class="sphoto-card">
+          <img src="assets/img/pantallas/p6.jpeg" alt="Pantallas LED" loading="lazy">
+          <div class="sphoto-card-overlay">
+            <div class="sphoto-icon">🖥️</div>
+            <div class="sphoto-title">Pantallas Digitales</div>
+            <div class="sphoto-desc">Publicidad LED en los puntos de mayor tráfico de la región.</div>
+            <div class="sphoto-link">Ver ubicaciones →</div>
+          </div>
+        </a>
+        <a href="diseno-web.html" class="sphoto-card">
+          <img src="assets/img/desarrollo/d3.jpeg" alt="Diseño Web" loading="lazy">
+          <div class="sphoto-card-overlay">
+            <div class="sphoto-icon">🎨</div>
+            <div class="sphoto-title">Diseño Web</div>
+            <div class="sphoto-desc">Sitios modernos que convierten visitas en clientes.</div>
+            <div class="sphoto-link">Ver proyectos →</div>
+          </div>
+        </a>
+        <a href="servicios.html" class="sphoto-card">
+          <img src="assets/img/servicio/s4.webp" alt="Reportes y Analytics" loading="lazy">
+          <div class="sphoto-card-overlay">
+            <div class="sphoto-icon">📊</div>
+            <div class="sphoto-title">Reportes & Analytics</div>
+            <div class="sphoto-desc">Datos claros, decisiones inteligentes. Reportes mensuales.</div>
+            <div class="sphoto-link">Incluido en todos los planes →</div>
+          </div>
+        </a>
       </div>
-    </div>
   </div>
 </section>
 
@@ -353,7 +418,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="index.html" class="nav-logo" style="font-size:1.2rem;margin-bottom:.2rem"><div class="logo-icon" style="width:28px;height:28px;font-size:14px">⚡</div>Viraliza</a>
+      <a href="index.html" class="nav-logo" style="font-size:1.2rem;margin-bottom:.2rem"><img src="assets/img/logo/viraliza-logo.png" alt="Viraliza" style="height:28px;width:auto;object-fit:contain"></a>
       <p>Agencia de publicidad digital especializada en hacer crecer marcas con estrategia, creatividad y tecnología.</p>
       <div class="footer-socials">
         <a href="#" class="fsoc">📸</a><a href="#" class="fsoc">👍</a><a href="#" class="fsoc">🎵</a><a href="#" class="fsoc">💼</a>
