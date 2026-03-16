@@ -4,91 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diseño Web — Viraliza</title>
-  <meta name="description" content="Diseño y desarrollo de sitios web modernos, rápidos y orientados a convertir visitantes en clientes.">
+  <meta name="description" content="Sitios web modernos, rápidos y orientados a convertir. Landing pages, sitios corporativos y tiendas online.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    .web-types-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem; margin-top: 3.5rem;
-    }
-    .web-type-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      transition: transform var(--transition), border-color var(--transition);
-    }
-    .web-type-card:hover { transform: translateY(-4px); border-color: rgba(0,229,160,.3); }
-    .web-type-header {
-      padding: 2rem 2rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 1rem;
-    }
-    .web-type-icon {
-      width: 48px; height: 48px; border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; flex-shrink: 0;
-    }
-    .web-type-header h3 { font-family: var(--font-head); font-weight: 700; color: var(--white); font-size: 1.1rem; }
-    .web-type-header p { font-size: .82rem; color: var(--muted); }
-    .web-type-body { padding: 1.5rem 2rem 2rem; }
-    .feature-list { display: flex; flex-direction: column; gap: .6rem; }
-    .feature-item { display: flex; align-items: center; gap: .7rem; font-size: .9rem; color: var(--text); }
-    .feature-item::before { content: '✓'; color: var(--accent); font-weight: 700; font-size: .85rem; flex-shrink: 0; }
-    .price-badge {
-      display: inline-block; margin-top: 1.5rem;
-      padding: .4rem 1rem;
-      background: rgba(0,229,160,.08); border: 1px solid rgba(0,229,160,.2);
-      border-radius: 99px; font-size: .8rem; font-weight: 700; color: var(--accent);
-    }
-
-    .tech-strip {
-      display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 3rem;
-    }
-    .tech-pill {
-      display: flex; align-items: center; gap: .5rem;
-      padding: .5rem 1.2rem;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 99px; font-size: .85rem; font-weight: 500; color: var(--text);
-      transition: border-color var(--transition), color var(--transition);
-    }
-    .tech-pill:hover { border-color: rgba(0,229,160,.3); color: var(--white); }
-
-    .portfolio-preview {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem; margin-top: 3.5rem;
-    }
-    .portfolio-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .portfolio-card:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0,0,0,.5); }
-    .portfolio-screen {
-      height: 200px; display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem; font-family: var(--font-head); font-weight: 700; color: rgba(255,255,255,.3);
-      position: relative; overflow: hidden;
-    }
-    .p1 { background: linear-gradient(135deg, #0f0f2a 0%, #1a0040 100%); }
-    .p2 { background: linear-gradient(135deg, #001a0d 0%, #003320 100%); }
-    .p3 { background: linear-gradient(135deg, #1a0a00 0%, #2d1500 100%); }
-    .portfolio-screen .mock-ui {
-      position: absolute; inset: 0; padding: 1.5rem;
-      display: flex; flex-direction: column; gap: .7rem;
-    }
-    .mock-nav { height: 8px; background: rgba(255,255,255,.1); border-radius: 4px; width: 70%; }
-    .mock-hero { height: 60px; background: rgba(255,255,255,.05); border-radius: 6px; }
-    .mock-cards { display: flex; gap: .5rem; }
-    .mock-card { flex: 1; height: 40px; background: rgba(255,255,255,.06); border-radius: 6px; }
-    .portfolio-info { padding: 1.5rem; }
-    .portfolio-info h3 { font-family: var(--font-head); font-weight: 700; color: var(--white); margin-bottom: .3rem; }
-    .portfolio-info p { font-size: .85rem; color: var(--muted); }
+    :root { --acc:#ff8b00; --a2:#0086ff; --bg:#090b0f; --bg2:#0e1117; --bg3:#13181f; --brd:rgba(255,255,255,.08); --mut:#636a7e; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:#c8ccd8;font-family:'Inter',sans-serif;overflow-x:hidden}
+    .sec{padding:clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,3rem)}
+    .sec-alt{background:var(--bg2)}
+    .container{max-width:1160px;margin:0 auto}
+    .bdg{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(255,139,0,.12);color:var(--acc);font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border-radius:99px;margin-bottom:1rem}
+    .bdg::before{content:'';width:5px;height:5px;background:var(--acc);border-radius:50%}
+    .sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.03em;margin-bottom:.8rem}
+    .sec-title em{font-style:normal;background:linear-gradient(135deg,#ff8b00,#0086ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .sec-sub{font-size:1rem;color:var(--mut);max-width:520px;line-height:1.8}
+    /* Plan cards */
+    .plan{background:var(--bg2);border:1px solid var(--brd);border-radius:16px;padding:1.8rem;position:relative;transition:transform .3s,border-color .3s}
+    .plan:hover{transform:translateY(-3px);border-color:rgba(255,139,0,.25)}
+    .plan.featured{background:linear-gradient(145deg,#ff8b00 0%,#e06500 100%);border-color:#ff8b00}
+    .plan-name{font-size:.78rem;font-weight:700;color:var(--mut);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem}
+    .plan.featured .plan-name{color:rgba(255,255,255,.65)}
+    .plan-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:.3rem}
+    .plan.featured .plan-title{color:#fff}
+    .plan-sub{font-size:.85rem;color:var(--mut);margin-bottom:1.2rem}
+    .plan.featured .plan-sub{color:rgba(255,255,255,.65)}
+    .plan-feat{display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#c8ccd8;margin-bottom:.55rem}
+    .plan.featured .plan-feat{color:rgba(255,255,255,.9)}
+    .plan-feat::before{content:'✓';width:16px;height:16px;background:rgba(255,139,0,.15);color:#ff8b00;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:900;flex-shrink:0}
+    .plan.featured .plan-feat::before{background:rgba(255,255,255,.2);color:#fff}
+    .plan-btn{display:block;width:100%;padding:.8rem;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.88rem;cursor:pointer;text-align:center;text-decoration:none;margin-top:1.4rem;border:1.5px solid var(--acc);color:var(--acc);background:transparent;transition:background .2s,color .2s}
+    .plan-btn:hover{background:var(--acc);color:#fff}
+    .plan-btn.w{border-color:#fff;color:#fff;background:rgba(255,255,255,.12)}
+    .plan-btn.w:hover{background:#fff;color:#ff8b00}
+    .plan-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);padding:2px 14px;background:#0086ff;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;font-weight:700;border-radius:99px;white-space:nowrap}
+    .divider{height:1px;background:rgba(255,255,255,.08);margin:1.2rem 0}
+    .plan.featured .divider{background:rgba(255,255,255,.2)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+    /* Portfolio */
+    .pcard{background:var(--bg2);border:1px solid var(--brd);border-radius:14px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+    .pcard:hover{transform:translateY(-3px);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+    .pcard-img{position:relative;height:200px;overflow:hidden}
+    .pcard-img img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:brightness(.78)}
+    .pcard-body{padding:1.2rem 1.4rem}
+    .pcard-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#fff;margin-bottom:.3rem}
+    .pcard-desc{font-size:.83rem;color:var(--mut);line-height:1.6}
+    /* Process */
+    .step{background:var(--bg2);border:1px solid var(--brd);border-radius:14px;padding:1.6rem}
+    .step-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.5rem;font-weight:800;color:rgba(255,255,255,.06);line-height:1;margin-bottom:.8rem}
+    .step-t{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.4rem}
+    .step-d{font-size:.87rem;color:var(--mut);line-height:1.7}
+    /* Tech pills */
+    .pill{padding:6px 14px;background:var(--bg2);border:1px solid var(--brd);border-radius:99px;font-size:.85rem;color:#c8ccd8;display:inline-block;margin:.3rem}
   </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:32px;width:auto;object-fit:contain;mix-blend-mode:screen"></a>
+    <img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:34px;width:auto;object-fit:contain;mix-blend-mode:screen">
+  </a>
   <ul class="nav-links">
     <li><a href="index.html">Inicio</a></li>
     <li><a href="servicios.html">Servicios</a></li>
@@ -100,283 +75,169 @@
   <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
 
-<div class="page-hero">
-  <div class="page-hero-bg" style="background:radial-gradient(ellipse 70% 70% at 30% 60%, rgba(0,229,160,.12) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 80% 20%, rgba(124,58,237,.12) 0%, transparent 55%), var(--bg)"></div>
-  <div class="container">
+<!-- HERO -->
+<div style="padding:calc(70px + 4rem) clamp(1.5rem,5vw,3rem) 4rem;background:radial-gradient(ellipse 70% 60% at 30% 60%,rgba(255,139,0,.09),transparent 55%),radial-gradient(ellipse 60% 60% at 80% 20%,rgba(0,134,255,.09),transparent 55%),#090b0f;border-bottom:1px solid rgba(255,255,255,.07)">
+  <div style="max-width:1160px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap">
     <div>
-      <div class="section-tag">Desarrollo & Diseño</div>
-      <h1 class="page-hero-title">Diseño<br><em>Web</em></h1>
+      <div class="bdg">Desarrollo & Diseño</div>
+      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800;color:#fff;line-height:1.04;letter-spacing:-.04em">Diseño <em style="font-style:normal;background:linear-gradient(135deg,#ff8b00,#0086ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Web</em></h1>
     </div>
-    <p class="page-hero-desc">Sitios que no solo se ven bien — que convierten visitas en ventas y comunican tu marca al 100%.</p>
+    <p style="font-size:1rem;color:#636a7e;max-width:380px;line-height:1.8">Sitios que no solo se ven bien — que convierten visitas en ventas reales.</p>
   </div>
 </div>
 
-<!-- TIPOS DE SITIOS -->
-<section>
+<!-- TIPOS DE SITIO -->
+<div class="sec">
   <div class="container">
-    <div class="fade-in">
-      <div class="section-tag">¿Qué tipo de sitio necesitás?</div>
-      <h2 class="section-title">Una web para <em>cada objetivo</em></h2>
-      <p class="section-sub">No hay un sitio igual para todos. Diseñamos según tus metas, tu industria y tu presupuesto.</p>
+    <div class="bdg">¿Qué tipo necesitás?</div>
+    <h2 class="sec-title">Una web para <em>cada objetivo</em></h2>
+    <p class="sec-sub" style="margin-bottom:2.5rem">Diseñamos según tus metas, tu industria y tu presupuesto.</p>
+    <div class="grid">
+      <div class="plan">
+        <div class="plan-name">Landing Page</div>
+        <div class="plan-title">Conversión máxima</div>
+        <div class="plan-sub">Para campañas publicitarias</div>
+        <div class="divider"></div>
+        <div class="plan-feat">Diseño enfocado en conversión</div>
+        <div class="plan-feat">Formulario de captación de leads</div>
+        <div class="plan-feat">Integración Meta / Google Ads</div>
+        <div class="plan-feat">Mobile-first y rápida</div>
+        <div style="margin-top:1.2rem;padding:3px 12px;background:rgba(255,139,0,.1);color:#ff8b00;border-radius:99px;font-size:.75rem;font-weight:700;display:inline-block">Entrega en 7 días</div>
+        <a href="https://wa.me/5493416641391" target="_blank" class="plan-btn">Pedir presupuesto</a>
+      </div>
+      <div class="plan featured">
+        <div class="plan-badge">✨ Más solicitado</div>
+        <div class="plan-name">Sitio Corporativo</div>
+        <div class="plan-title">Presencia profesional</div>
+        <div class="plan-sub">Completo y personalizado</div>
+        <div class="divider"></div>
+        <div class="plan-feat">Diseño único a tu marca</div>
+        <div class="plan-feat">Múltiples páginas</div>
+        <div class="plan-feat">SEO básico incluido</div>
+        <div class="plan-feat">Blog opcional</div>
+        <div style="margin-top:1.2rem;padding:3px 12px;background:rgba(255,255,255,.15);color:#fff;border-radius:99px;font-size:.75rem;font-weight:700;display:inline-block">Entrega en 14 días</div>
+        <a href="https://wa.me/5493416641391" target="_blank" class="plan-btn w">Pedir presupuesto</a>
+      </div>
+      <div class="plan">
+        <div class="plan-name">Tienda Online</div>
+        <div class="plan-title">Vendé 24/7</div>
+        <div class="plan-sub">E-commerce completo</div>
+        <div class="divider"></div>
+        <div class="plan-feat">Catálogo de productos</div>
+        <div class="plan-feat">MercadoPago / Stripe</div>
+        <div class="plan-feat">Gestión de stock</div>
+        <div class="plan-feat">Panel de administración</div>
+        <div style="margin-top:1.2rem;padding:3px 12px;background:rgba(0,134,255,.1);color:#0086ff;border-radius:99px;font-size:.75rem;font-weight:700;display:inline-block;border:1px solid rgba(0,134,255,.2)">Entrega en 21 días</div>
+        <a href="https://wa.me/5493416641391" target="_blank" class="plan-btn" style="border-color:#0086ff;color:#0086ff">Pedir presupuesto</a>
+      </div>
     </div>
-    <div class="web-types-grid">
-      <div class="web-type-card fade-in fade-in-delay-1">
-        <div class="web-type-header">
-          <div class="web-type-icon" style="background:rgba(0,229,160,.1)">🏠</div>
-          <div>
-            <h3>Landing Page</h3>
-            <p>Conversión máxima para campañas</p>
-          </div>
-        </div>
-        <div class="web-type-body">
-          <div class="feature-list">
-            <div class="feature-item">Diseño enfocado en conversión</div>
-            <div class="feature-item">Formulario de captación de leads</div>
-            <div class="feature-item">Optimizada para velocidad</div>
-            <div class="feature-item">Integración con Meta Ads / Google</div>
-            <div class="feature-item">Mobile-first</div>
-          </div>
-          <div class="price-badge">Entrega en 7 días</div>
+  </div>
+</div>
+
+<!-- PORTFOLIO -->
+<div class="sec sec-alt">
+  <div class="container">
+    <div class="bdg">Portfolio</div>
+    <h2 class="sec-title">Algunos de nuestros <em>proyectos</em></h2>
+    <p class="sec-sub" style="margin-bottom:2rem">Proyectos reales desarrollados por el equipo de Viraliza.</p>
+    <div class="grid">
+      <div class="pcard">
+        <div class="pcard-img"><img src="assets/img/desarrollo/d3.jpeg" alt="Sistema de Turnos Online"></div>
+        <div class="pcard-body">
+          <div class="pcard-title">Sistema de Turnos Online</div>
+          <div class="pcard-desc">Plataforma de gestión de turnos para profesionales de la salud, estética y educación. Diseño oscuro y moderno.</div>
         </div>
       </div>
-      <div class="web-type-card fade-in fade-in-delay-2">
-        <div class="web-type-header">
-          <div class="web-type-icon" style="background:rgba(124,58,237,.1)">🏢</div>
-          <div>
-            <h3>Sitio Corporativo</h3>
-            <p>Presencia profesional completa</p>
+      <div class="pcard">
+        <!-- E-commerce mockup visual -->
+        <div class="pcard-img" style="background:linear-gradient(135deg,#0d1a0d 0%,#0a1f2e 100%)">
+          <div style="position:absolute;inset:0;padding:14px;display:flex;flex-direction:column;gap:7px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div style="width:55px;height:7px;background:#ff8b00;border-radius:4px;opacity:.9"></div>
+              <div style="display:flex;gap:5px"><div style="width:35px;height:5px;background:rgba(255,255,255,.15);border-radius:3px"></div><div style="width:35px;height:5px;background:rgba(255,255,255,.15);border-radius:3px"></div></div>
+              <div style="width:22px;height:16px;background:#ff8b00;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px">🛒</div>
+            </div>
+            <div style="width:100%;height:32px;background:linear-gradient(135deg,rgba(255,139,0,.2),rgba(0,134,255,.12));border-radius:6px"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;flex:1">
+              <div style="background:rgba(255,255,255,.06);border-radius:6px;padding:5px;display:flex;flex-direction:column;gap:3px"><div style="flex:1;background:rgba(255,139,0,.15);border-radius:4px"></div><div style="height:4px;background:rgba(255,255,255,.25);border-radius:2px;width:80%"></div><div style="height:4px;background:#ff8b00;border-radius:2px;width:50%"></div></div>
+              <div style="background:rgba(255,255,255,.06);border-radius:6px;padding:5px;display:flex;flex-direction:column;gap:3px"><div style="flex:1;background:rgba(0,134,255,.15);border-radius:4px"></div><div style="height:4px;background:rgba(255,255,255,.25);border-radius:2px;width:70%"></div><div style="height:4px;background:#ff8b00;border-radius:2px;width:45%"></div></div>
+              <div style="background:rgba(255,255,255,.06);border-radius:6px;padding:5px;display:flex;flex-direction:column;gap:3px"><div style="flex:1;background:rgba(255,139,0,.12);border-radius:4px"></div><div style="height:4px;background:rgba(255,255,255,.25);border-radius:2px;width:60%"></div><div style="height:4px;background:#ff8b00;border-radius:2px;width:55%"></div></div>
+            </div>
           </div>
         </div>
-        <div class="web-type-body">
-          <div class="feature-list">
-            <div class="feature-item">Diseño personalizado y único</div>
-            <div class="feature-item">Múltiples secciones y páginas</div>
-            <div class="feature-item">SEO básico incluido</div>
-            <div class="feature-item">Formulario de contacto</div>
-            <div class="feature-item">Blog opcional</div>
-          </div>
-          <div class="price-badge">Entrega en 14 días</div>
+        <div class="pcard-body">
+          <div class="pcard-title">Tienda Online E-commerce</div>
+          <div class="pcard-desc">Catálogo de productos, carrito de compras y pago con MercadoPago. Gestión de stock incluida.</div>
         </div>
       </div>
-      <div class="web-type-card fade-in fade-in-delay-3">
-        <div class="web-type-header">
-          <div class="web-type-icon" style="background:rgba(255,77,109,.1)">🛒</div>
-          <div>
-            <h3>Tienda Online</h3>
-            <p>Vendé mientras dormís</p>
-          </div>
-        </div>
-        <div class="web-type-body">
-          <div class="feature-list">
-            <div class="feature-item">Catálogo de productos</div>
-            <div class="feature-item">Carrito y checkout integrado</div>
-            <div class="feature-item">MercadoPago / Stripe</div>
-            <div class="feature-item">Gestión de stock</div>
-            <div class="feature-item">Panel de administración</div>
-          </div>
-          <div class="price-badge">Entrega en 21 días</div>
+      <div class="pcard">
+        <div class="pcard-img"><img src="assets/img/desarrollo/d1.jpeg" alt="Diseño Gráfico y Branding"></div>
+        <div class="pcard-body">
+          <div class="pcard-title">Diseño Gráfico & Branding</div>
+          <div class="pcard-desc">Mockups de producto, identidad visual y piezas gráficas para redes, packaging y publicidad.</div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- TECNOLOGÍAS -->
-<section style="padding-top:0">
+<div class="sec">
   <div class="container">
-    <div class="fade-in">
-      <div class="section-tag">Stack tecnológico</div>
-      <h2 class="section-title">Tecnología <em>moderna</em></h2>
-      <p class="section-sub">Usamos las herramientas adecuadas para cada proyecto. Nada de plantillas genéricas — código limpio, sitios rápidos.</p>
-    </div>
-    <div class="tech-strip fade-in">
-      <span class="tech-pill">⚡ HTML / CSS / JS</span>
-      <span class="tech-pill">⚛️ React</span>
-      <span class="tech-pill">🔷 Next.js</span>
-      <span class="tech-pill">🌐 WordPress</span>
-      <span class="tech-pill">🛍️ WooCommerce</span>
-      <span class="tech-pill">🟢 Node.js</span>
-      <span class="tech-pill">🎨 Figma</span>
-      <span class="tech-pill">☁️ Hostinger</span>
-      <span class="tech-pill">🐙 GitHub</span>
-      <span class="tech-pill">🔍 SEO</span>
-      <span class="tech-pill">💳 MercadoPago</span>
-      <span class="tech-pill">📊 Analytics</span>
+    <div class="bdg">Stack tecnológico</div>
+    <h2 class="sec-title">Tecnología <em>moderna</em></h2>
+    <p class="sec-sub" style="margin-bottom:1.5rem">Código limpio, sitios rápidos. Nada de plantillas genéricas.</p>
+    <div>
+      <span class="pill">⚡ HTML / CSS / JS</span>
+      <span class="pill">⚛️ React</span>
+      <span class="pill">🔷 Next.js</span>
+      <span class="pill">🌐 WordPress</span>
+      <span class="pill">🛍️ WooCommerce</span>
+      <span class="pill">☁️ Hostinger</span>
+      <span class="pill">🐙 GitHub</span>
+      <span class="pill">🔍 SEO</span>
+      <span class="pill">💳 MercadoPago</span>
+      <span class="pill">📊 Analytics</span>
     </div>
   </div>
-</section>
-
-<!-- PORTFOLIO PREVIEW -->
-<section style="padding-top:0">
-  <div class="container">
-    <div class="fade-in">
-      <div class="section-tag">Portfolio</div>
-      <h2 class="section-title">Algunos de nuestros <em>proyectos</em></h2>
-    </div>
-    <div class="portfolio-preview">
-
-      <!-- Card 1: Viraliza Agenda — foto real del proyecto -->
-      <div class="portfolio-card fade-in fade-in-delay-1">
-        <div class="portfolio-screen" style="padding:0;overflow:hidden;height:200px">
-          <img src="assets/img/desarrollo/d3.jpeg" alt="Viraliza Agenda — Sistema de Turnos" style="width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.8)">
-        </div>
-        <div class="portfolio-info">
-          <h3>Sistema de Turnos Online</h3>
-          <p>Plataforma de gestión de turnos para profesionales de la salud, estética y educación. Diseño oscuro, moderno y funcional.</p>
-        </div>
-      </div>
-
-      <!-- Card 2: E-commerce mockup (CSS visual) -->
-      <div class="portfolio-card fade-in fade-in-delay-2">
-        <div class="portfolio-screen" style="padding:0;overflow:hidden;height:200px;background:linear-gradient(135deg,#0d1a0d 0%,#0a1f2e 100%)">
-          <!-- Mock e-commerce UI in CSS -->
-          <div style="padding:14px;height:100%;display:flex;flex-direction:column;gap:8px">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
-              <div style="width:60px;height:8px;background:#ff8b00;border-radius:4px;opacity:.9"></div>
-              <div style="display:flex;gap:6px">
-                <div style="width:40px;height:6px;background:rgba(255,255,255,.15);border-radius:3px"></div>
-                <div style="width:40px;height:6px;background:rgba(255,255,255,.15);border-radius:3px"></div>
-                <div style="width:30px;height:6px;background:rgba(255,255,255,.15);border-radius:3px"></div>
-              </div>
-              <div style="width:24px;height:18px;background:#ff8b00;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px">🛒</div>
-            </div>
-            <div style="width:100%;height:36px;background:linear-gradient(135deg,rgba(255,139,0,.25),rgba(0,134,255,.15));border-radius:6px;display:flex;align-items:center;padding:0 10px">
-              <div style="width:55%;height:7px;background:rgba(255,255,255,.7);border-radius:3px"></div>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;flex:1">
-              <div style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px;display:flex;flex-direction:column;gap:4px">
-                <div style="flex:1;background:rgba(255,139,0,.15);border-radius:4px"></div>
-                <div style="height:5px;background:rgba(255,255,255,.3);border-radius:2px;width:80%"></div>
-                <div style="height:5px;background:#ff8b00;border-radius:2px;width:50%"></div>
-              </div>
-              <div style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px;display:flex;flex-direction:column;gap:4px">
-                <div style="flex:1;background:rgba(0,134,255,.15);border-radius:4px"></div>
-                <div style="height:5px;background:rgba(255,255,255,.3);border-radius:2px;width:70%"></div>
-                <div style="height:5px;background:#ff8b00;border-radius:2px;width:45%"></div>
-              </div>
-              <div style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px;display:flex;flex-direction:column;gap:4px">
-                <div style="flex:1;background:rgba(255,139,0,.12);border-radius:4px"></div>
-                <div style="height:5px;background:rgba(255,255,255,.3);border-radius:2px;width:60%"></div>
-                <div style="height:5px;background:#ff8b00;border-radius:2px;width:55%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <h3>Tienda Online E-commerce</h3>
-          <p>Catálogo de productos, carrito de compras y pago con MercadoPago. Gestión de stock y panel de administración incluidos.</p>
-        </div>
-      </div>
-
-      <!-- Card 3: Diseño Gráfico — foto real de trabajo en Photoshop -->
-      <div class="portfolio-card fade-in fade-in-delay-3">
-        <div class="portfolio-screen" style="padding:0;overflow:hidden;height:200px">
-          <img src="assets/img/desarrollo/d1.jpeg" alt="Diseño Gráfico y Branding" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.85)">
-        </div>
-        <div class="portfolio-info">
-          <h3>Diseño Gráfico & Branding</h3>
-          <p>Mockups de producto, identidad visual y piezas gráficas para redes sociales, packaging y publicidad.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+</div>
 
 <!-- PROCESO -->
-<section style="padding-top:0">
+<div class="sec sec-alt">
   <div class="container">
-    <div class="fade-in">
-      <div class="section-tag">Nuestro proceso</div>
-      <h2 class="section-title">De la idea al <em>lanzamiento</em></h2>
-    </div>
-    <div class="process-grid fade-in">
-      <div class="process-step">
-        <div class="step-num">01</div>
-        <div class="step-title">Brief</div>
-        <div class="step-desc">Entendemos tu negocio, objetivos y audiencia para definir la estrategia del sitio.</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">02</div>
-        <div class="step-title">Diseño</div>
-        <div class="step-desc">Wireframes y diseño visual en Figma. Vos aprobás antes de que escribamos una línea de código.</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">03</div>
-        <div class="step-title">Desarrollo</div>
-        <div class="step-desc">Construimos el sitio con código limpio, veloz y optimizado para SEO y conversión.</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">04</div>
-        <div class="step-title">Lanzamiento</div>
-        <div class="step-desc">Publicamos en tu hosting, configuramos dominio, analíticas y te entregamos todo funcionando.</div>
-      </div>
+    <div class="bdg">Nuestro proceso</div>
+    <h2 class="sec-title">De la idea al <em>lanzamiento</em></h2>
+    <div class="grid" style="margin-top:2rem">
+      <div class="step"><div class="step-num">01</div><div class="step-t">Brief</div><div class="step-d">Entendemos tu negocio, objetivos y audiencia para definir la estrategia del sitio.</div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-t">Diseño</div><div class="step-d">Diseño visual completo. Vos aprobás antes de que escribamos una línea de código.</div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-t">Desarrollo</div><div class="step-d">Construimos el sitio con código limpio, veloz y optimizado para SEO y conversión.</div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-t">Lanzamiento</div><div class="step-d">Publicamos en tu hosting, configuramos dominio, analíticas y te entregamos todo funcionando.</div></div>
     </div>
   </div>
-</section>
+</div>
 
-<div class="cta-band fade-in">
-  <div class="cta-band-text">
-    <h2>¿Necesitás un sitio web nuevo?</h2>
-    <p>Contanos tu proyecto y te damos un presupuesto sin compromiso.</p>
+<!-- CTA -->
+<div class="sec">
+  <div style="background:linear-gradient(135deg,#ff8b00,#0086ff);border-radius:18px;padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem);display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;max-width:1160px;margin:0 auto">
+    <div><h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:#fff;margin-bottom:.5rem">¿Necesitás un sitio nuevo?</h2><p style="color:rgba(255,255,255,.8)">Presupuesto sin compromiso en 24 horas.</p></div>
+    <a href="https://wa.me/5493416641391" target="_blank" style="padding:.85rem 2rem;background:#fff;color:#ff8b00;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;border-radius:10px;text-decoration:none;white-space:nowrap">📲 Pedir presupuesto</a>
   </div>
-  <a href="https://wa.me/5493416641391" class="btn-white" target="_blank">📲 Pedir presupuesto</a>
 </div>
 
 <footer>
   <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="nav-logo" style="margin-bottom:.8rem"><img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:40px;width:auto;object-fit:contain;mix-blend-mode:screen"></div>
-      <p>Agencia de publicidad digital especializada en hacer crecer marcas con estrategia, creatividad y tecnología.</p>
-      <div class="footer-socials">
-        <a href="#" class="social-btn">📸</a><a href="#" class="social-btn">👍</a>
-        <a href="#" class="social-btn">💬</a><a href="#" class="social-btn">💼</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Navegación</h4>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="automatizaciones.html">Automatizaciones</a></li>
-        <li><a href="pantallas.html">Pantallas</a></li>
-        <li><a href="diseno-web.html">Diseño Web</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Diseño Web</h4>
-      <ul>
-        <li><a href="#">Landing Pages</a></li>
-        <li><a href="#">Sitios Corporativos</a></li>
-        <li><a href="#">Tiendas Online</a></li>
-        <li><a href="#">Portfolio</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contacto</h4>
-      <ul>
-        <li><a href="mailto:info@publicidadviraliza.com">info@publicidadviraliza.com</a></li>
-        <li><a href="https://wa.me/5493416641391">WhatsApp</a></li>
-        <li><a href="#">Colón, Bs. As.</a></li>
-      </ul>
-    </div>
+    <div class="footer-brand"><a href="index.html" class="nav-logo" style="margin-bottom:.5rem"><img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:28px;width:auto;object-fit:contain;mix-blend-mode:screen"></a><p>Agencia de publicidad digital en Colón, Buenos Aires.</p><div class="footer-socials"><a href="#" class="fsoc">📸</a><a href="#" class="fsoc">👍</a><a href="#" class="fsoc">💬</a><a href="#" class="fsoc">💼</a></div></div>
+    <div class="footer-col"><h4>Páginas</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="automatizaciones.html">Automatizaciones</a></li><li><a href="pantallas.html">Pantallas</a></li><li><a href="diseno-web.html">Diseño Web</a></li></ul></div>
+    <div class="footer-col"><h4>Diseño Web</h4><ul><li><a href="#">Landing Pages</a></li><li><a href="#">Sitios Corporativos</a></li><li><a href="#">Tiendas Online</a></li><li><a href="#">Portfolio</a></li></ul></div>
+    <div class="footer-col"><h4>Contacto</h4><ul><li><a href="mailto:info@publicidadviraliza.com">info@publicidadviraliza.com</a></li><li><a href="https://wa.me/5493416641391">WhatsApp</a></li><li><a href="#">Colón, Bs. As.</a></li></ul></div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2026 Viraliza. Todos los derechos reservados.</p>
-    <p>Hecho con ❤️ para marcas que quieren crecer</p>
-  </div>
+  <div class="footer-bottom"><p>© 2026 Viraliza. Todos los derechos reservados.</p></div>
 </footer>
-<!-- WhatsApp flotante -->
+
 <a href="https://wa.me/5493416641391" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
   <span class="wa-tooltip">¡Hablemos por WhatsApp!</span>
-  <div class="wa-btn">
-    <div class="wa-pulse"></div>
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </div>
+  <div class="wa-btn"><div class="wa-pulse"></div><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
 </a>
-
 <script src="assets/js/main.js"></script>
 </body>
 </html>

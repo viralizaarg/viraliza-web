@@ -1,223 +1,211 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servicios — Viraliza</title>
+  <meta name="description" content="Publicidad digital, gestión de redes, WhatsApp Business y más. Todos los servicios de Viraliza.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    :root { --acc:#ff8b00; --a2:#0086ff; --bg:#090b0f; --bg2:#0e1117; --bg3:#13181f; --brd:rgba(255,255,255,.08); --txt:#c8ccd8; --mut:#636a7e; --fh:'Plus Jakarta Sans',sans-serif; --fb:'Inter',sans-serif; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--txt);font-family:var(--fb);overflow-x:hidden}
+    .card{background:var(--bg2);border:1px solid var(--brd);border-radius:14px;padding:1.8rem;transition:transform .3s,border-color .3s}
+    .card:hover{transform:translateY(-3px);border-color:rgba(255,139,0,.25)}
+    .card-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1rem}
+    .card-icon.or{background:rgba(255,139,0,.14)} .card-icon.bl{background:rgba(0,134,255,.12)} .card-icon.gr{background:rgba(52,211,153,.1)} .card-icon.pk{background:rgba(244,114,182,.12)}
+    .card-t{font-family:var(--fh);font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+    .card-d{font-size:.88rem;color:var(--mut);line-height:1.7}
+    .tag{display:inline-block;padding:.2rem .7rem;border-radius:99px;font-size:.72rem;font-weight:600;margin:.3rem .2rem 0 0}
+    .tag-or{background:rgba(255,139,0,.1);color:var(--acc);border:1px solid rgba(255,139,0,.2)}
+    .tag-bl{background:rgba(0,134,255,.1);color:var(--a2);border:1px solid rgba(0,134,255,.2)}
+    .tag-pk{background:rgba(244,114,182,.1);color:#f472b6;border:1px solid rgba(244,114,182,.2)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+    .sec{padding:clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,3rem)}
+    .sec-alt{background:var(--bg2)}
+    .container{max-width:1160px;margin:0 auto}
+    .bdg{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(255,139,0,.12);color:var(--acc);font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border-radius:99px;margin-bottom:1rem}
+    .bdg::before{content:'';width:5px;height:5px;background:var(--acc);border-radius:50%}
+    .sec-title{font-family:var(--fh);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.03em;margin-bottom:.8rem}
+    .sec-title em{font-style:normal;background:linear-gradient(135deg,#ff8b00,#0086ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .sec-sub{font-size:1rem;color:var(--mut);max-width:520px;line-height:1.8;margin-bottom:0}
+    /* Slider */
+    #srvSlider .slide{display:none} #srvSlider .slide.active{display:block}
+    .slide-img{width:100%;height:100%;object-fit:cover;filter:brightness(.52)}
+    .cta-band{background:linear-gradient(135deg,#ff8b00,#0086ff);border-radius:18px;padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem);display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin:0 auto;max-width:1160px}
+    .btn-w{padding:.8rem 1.8rem;background:#fff;color:#ff8b00;font-family:var(--fh);font-weight:700;font-size:.9rem;border-radius:10px;text-decoration:none;white-space:nowrap}
+    .footer{padding:3rem clamp(1.5rem,5vw,3rem) 1.5rem;border-top:1px solid var(--brd);max-width:1160px;margin:0 auto}
+  </style>
 </head>
 <body>
+
 <nav>
-  <a href="index.html" class="nav-logo"><div class="logo-icon">⚡</div>Viraliza</a>
+  <a href="index.html" class="nav-logo">
+    <img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:34px;width:auto;object-fit:contain;mix-blend-mode:screen">
+  </a>
   <ul class="nav-links">
-    <li><a href="index.html">Inicio</a></li><li><a href="servicios.html" class="active">Servicios</a></li>
-    <li><a href="automatizaciones.html">Automatizaciones</a></li><li><a href="pantallas.html">Pantallas</a></li>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="servicios.html" class="active">Servicios</a></li>
+    <li><a href="automatizaciones.html">Automatizaciones</a></li>
+    <li><a href="pantallas.html">Pantallas</a></li>
     <li><a href="diseno-web.html">Diseño Web</a></li>
     <li><a href="https://wa.me/5493416641391" class="nav-cta" target="_blank">Contactar →</a></li>
   </ul>
   <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div><div class="badge">Lo que ofrecemos</div><h1 class="page-hero-title">Nuestros<br><em>Servicios</em></h1></div>
-    <p class="page-hero-desc">Soluciones digitales completas. Sin contratos largos, con resultados desde el primer mes.</p>
+
+<!-- SLIDER SERVICIOS -->
+<div id="srvSlider" style="position:relative;width:100%;height:75vh;min-height:480px;overflow:hidden;background:#090b0f">
+
+  <div class="slide active" style="position:absolute;inset:0;overflow:hidden">
+    <img src="assets/img/servicio/s3.webp" alt="Meta Ads" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:brightness(.52)">
+    <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(9,11,15,.75) 0%,rgba(9,11,15,.2) 45%,rgba(9,11,15,.7) 100%)"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:clamp(1.5rem,4vw,3rem) clamp(1.5rem,5vw,3rem);background:linear-gradient(to top,rgba(9,11,15,.95),transparent)">
+      <div style="display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(255,139,0,.14);border:1px solid rgba(255,139,0,.3);border-radius:99px;font-size:.72rem;font-weight:700;color:#ff8b00;margin-bottom:12px">📊 Publicidad Digital</div>
+      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,5vw,3.5rem);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.04em;margin-bottom:10px">Campañas que<br><em style="font-style:normal;background:linear-gradient(135deg,#ff8b00,#0086ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">miden resultados</em></h1>
+      <p style="font-size:clamp(.85rem,2vw,1rem);color:rgba(255,255,255,.72);max-width:480px;line-height:1.75;margin-bottom:18px">Meta Ads, Google Ads y WhatsApp Business. Gestionamos tu presupuesto para el máximo retorno.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="https://wa.me/5493416641391" target="_blank" style="padding:9px 20px;background:#ff8b00;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.88rem;border-radius:10px;text-decoration:none">📲 Consultanos</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" style="position:absolute;inset:0;overflow:hidden">
+    <img src="assets/img/servicio/s4.webp" alt="Equipo Viraliza" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:brightness(.52)">
+    <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(9,11,15,.75) 0%,rgba(9,11,15,.2) 45%,rgba(9,11,15,.7) 100%)"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:clamp(1.5rem,4vw,3rem) clamp(1.5rem,5vw,3rem);background:linear-gradient(to top,rgba(9,11,15,.95),transparent)">
+      <div style="display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(255,139,0,.14);border:1px solid rgba(255,139,0,.3);border-radius:99px;font-size:.72rem;font-weight:700;color:#ff8b00;margin-bottom:12px">👥 Nuestro equipo</div>
+      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,5vw,3.5rem);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.04em;margin-bottom:10px">Un equipo que<br><em style="font-style:normal;background:linear-gradient(135deg,#ff8b00,#0086ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">trabaja por tu marca</em></h1>
+      <p style="font-size:clamp(.85rem,2vw,1rem);color:rgba(255,255,255,.72);max-width:480px;line-height:1.75;margin-bottom:18px">Estrategas, diseñadores y gestores dedicados a hacer crecer tu negocio digital con soporte real.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="https://wa.me/5493416641391" target="_blank" style="padding:9px 20px;background:#ff8b00;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.88rem;border-radius:10px;text-decoration:none">📲 Hablar con el equipo</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" style="position:absolute;inset:0;overflow:hidden">
+    <img src="assets/img/servicio/s7.webp" alt="WhatsApp Business" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:brightness(.52)">
+    <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(9,11,15,.75) 0%,rgba(9,11,15,.2) 45%,rgba(9,11,15,.7) 100%)"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:clamp(1.5rem,4vw,3rem) clamp(1.5rem,5vw,3rem);background:linear-gradient(to top,rgba(9,11,15,.95),transparent)">
+      <div style="display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(255,139,0,.14);border:1px solid rgba(255,139,0,.3);border-radius:99px;font-size:.72rem;font-weight:700;color:#ff8b00;margin-bottom:12px">💬 WhatsApp Business</div>
+      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,5vw,3.5rem);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.04em;margin-bottom:10px">Llegá directo<br><em style="font-style:normal;background:linear-gradient(135deg,#ff8b00,#0086ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">al celular de tus clientes</em></h1>
+      <p style="font-size:clamp(.85rem,2vw,1rem);color:rgba(255,255,255,.72);max-width:480px;line-height:1.75;margin-bottom:18px">Mensajes masivos personalizados, catálogo de productos y atención automatizada 24/7.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="automatizaciones.html" style="padding:9px 20px;background:#ff8b00;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.88rem;border-radius:10px;text-decoration:none">Ver automatizaciones →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flechas -->
+  <button onclick="srvGo(srvCur-1)" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);z-index:10;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);cursor:pointer;display:flex;align-items:center;justify-content:center">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <button onclick="srvGo(srvCur+1)" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);z-index:10;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);cursor:pointer;display:flex;align-items:center;justify-content:center">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+  <!-- Dots -->
+  <div id="srvDots" style="position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10"></div>
+  <!-- Progress -->
+  <div id="srvProg" style="position:absolute;bottom:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#ff8b00,#0086ff);z-index:10"></div>
+</div>
+
+<!-- PUBLICIDAD -->
+<div class="sec">
+  <div class="container">
+    <div class="bdg">Publicidad Paga</div>
+    <h2 class="sec-title">Campañas que <em>convierten</em></h2>
+    <p class="sec-sub" style="margin-bottom:2rem">Gestionamos tu presupuesto en todas las plataformas para el máximo retorno de inversión.</p>
+    <div class="grid">
+      <div class="card"><div class="card-icon bl">📘</div><div class="card-t">Meta Ads</div><div class="card-d">Facebook e Instagram. Segmentación precisa para tu cliente ideal. Awareness, tráfico, leads y conversión.</div><div style="margin-top:.8rem"><span class="tag tag-bl">Awareness</span><span class="tag tag-bl">Conversión</span><span class="tag tag-bl">Retargeting</span></div></div>
+      <div class="card"><div class="card-icon or">🔍</div><div class="card-t">Google Ads</div><div class="card-d">Aparecé cuando tu cliente te busca. Search, Display, Shopping y YouTube Ads con foco en resultados.</div><div style="margin-top:.8rem"><span class="tag tag-or">Search</span><span class="tag tag-or">Shopping</span><span class="tag tag-or">YouTube</span></div></div>
+      <div class="card"><div class="card-icon gr">💬</div><div class="card-t">WhatsApp Business</div><div class="card-d">Campañas masivas y automatizadas por WhatsApp. Llegá directo al celular de tus clientes.</div><div style="margin-top:.8rem"><span class="tag tag-or">Mensajes masivos</span><span class="tag tag-or">Catálogo</span></div></div>
+    </div>
   </div>
 </div>
-<section>
+
+<!-- SOCIAL MEDIA -->
+<div class="sec sec-alt">
   <div class="container">
-    <div class="section-header fade-in"><div class="badge">Publicidad</div><h2 class="section-title">Campañas que <em>convierten</em></h2><p class="section-sub">Gestionamos tu presupuesto publicitario en todas las plataformas para maximizar el retorno.</p></div>
-    <div class="features-grid">
-      <div class="feat-card fade-in fd1"><div class="feat-icon purple">📘</div><div class="feat-title">Meta Ads</div><div class="feat-desc">Campañas de awareness, tráfico, leads y ventas en Facebook e Instagram. Segmentación precisa para tu cliente ideal.</div><div class="tag-list" style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem"><span style="padding:.2rem .7rem;background:#ede9fe;color:#5b4cf5;border-radius:99px;font-size:.75rem;font-weight:600">Awareness</span><span style="padding:.2rem .7rem;background:#ede9fe;color:#5b4cf5;border-radius:99px;font-size:.75rem;font-weight:600">Conversión</span><span style="padding:.2rem .7rem;background:#ede9fe;color:#5b4cf5;border-radius:99px;font-size:.75rem;font-weight:600">Retargeting</span></div></div>
-      <div class="feat-card fade-in fd2"><div class="feat-icon cyan">🔍</div><div class="feat-title">Google Ads</div><div class="feat-desc">Aparecé cuando tu cliente te busca. Search, Display, Shopping y YouTube Ads con foco en resultados medibles.</div><div class="tag-list" style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem"><span style="padding:.2rem .7rem;background:#cffafe;color:#0891b2;border-radius:99px;font-size:.75rem;font-weight:600">Search</span><span style="padding:.2rem .7rem;background:#cffafe;color:#0891b2;border-radius:99px;font-size:.75rem;font-weight:600">Shopping</span><span style="padding:.2rem .7rem;background:#cffafe;color:#0891b2;border-radius:99px;font-size:.75rem;font-weight:600">YouTube</span></div></div>
-      <div class="feat-card fade-in fd3"><div class="feat-icon pink">💬</div><div class="feat-title">WhatsApp Business</div><div class="feat-desc">Campañas masivas y automatizadas por WhatsApp. Llegá directo al celular de tus clientes.</div><div class="tag-list" style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem"><span style="padding:.2rem .7rem;background:#fce7f3;color:#be185d;border-radius:99px;font-size:.75rem;font-weight:600">Mensajes masivos</span><span style="padding:.2rem .7rem;background:#fce7f3;color:#be185d;border-radius:99px;font-size:.75rem;font-weight:600">Catálogo</span></div></div>
+    <div class="bdg">Social Media</div>
+    <h2 class="sec-title">Gestión de <em>Redes Sociales</em></h2>
+    <p class="sec-sub" style="margin-bottom:2rem">Tu marca activa, coherente y en crecimiento todos los días.</p>
+    <div class="grid">
+      <div class="card"><div class="card-icon or">📸</div><div class="card-t">Producción de Contenido</div><div class="card-d">Diseño gráfico, fotografía, video y copywriting. Todo el contenido que tu marca necesita para destacar.</div></div>
+      <div class="card"><div class="card-icon gr">🤝</div><div class="card-t">Community Management</div><div class="card-d">Gestión diaria de comentarios, mensajes y comunidad. Respondemos en tiempo real.</div></div>
+      <div class="card"><div class="card-icon bl">📊</div><div class="card-t">Estrategia & Analytics</div><div class="card-d">Calendarios de contenido, análisis de métricas y reportes mensuales con datos accionables.</div></div>
     </div>
   </div>
-</section>
-<section style="background:var(--bg2)">
-  <div class="container">
-    <div class="section-header fade-in"><div class="badge">Social Media</div><h2 class="section-title">Gestión de <em>Redes Sociales</em></h2><p class="section-sub">Tu marca activa, coherente y en crecimiento. Nos ocupamos de todo el contenido y la comunidad.</p></div>
-    <div class="features-grid">
-      <div class="feat-card fade-in fd1"><div class="feat-icon orange">📸</div><div class="feat-title">Producción de Contenido</div><div class="feat-desc">Diseño gráfico, fotografía, video y copywriting. Todo el contenido que tu marca necesita para destacar.</div></div>
-      <div class="feat-card fade-in fd2"><div class="feat-icon green">🤝</div><div class="feat-title">Community Management</div><div class="feat-desc">Gestión diaria de comentarios, mensajes y comunidad. Respondemos en tiempo real y construimos relaciones reales.</div></div>
-      <div class="feat-card fade-in fd3"><div class="feat-icon blue">📊</div><div class="feat-title">Estrategia & Analytics</div><div class="feat-desc">Calendarios de contenido, análisis de métricas y reportes mensuales con datos reales y accionables.</div></div>
+</div>
+
+<!-- CTA -->
+<div class="sec">
+  <div style="background:linear-gradient(135deg,#ff8b00,#0086ff);border-radius:18px;padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem);display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;max-width:1160px;margin:0 auto">
+    <div>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:#fff;margin-bottom:.5rem">¿Querés más información?</h2>
+      <p style="color:rgba(255,255,255,.8);font-size:.95rem">Contanos tu negocio y armamos una propuesta a medida sin costo.</p>
     </div>
+    <a href="https://wa.me/5493416641391" target="_blank" style="padding:.85rem 2rem;background:#fff;color:#ff8b00;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;border-radius:10px;text-decoration:none;white-space:nowrap">📲 Hablar con un asesor</a>
   </div>
-</section>
-<div class="cta-section"><div class="cta-inner fade-in"><h2 class="cta-title">¿Querés más información?</h2><p class="cta-sub">Contanos tu negocio y armamos una propuesta a medida sin costo.</p><div class="cta-actions"><a href="https://wa.me/5493416641391" class="btn-white" target="_blank">📲 Hablar con un asesor</a><a href="index.html" class="btn-outline-white">Ver precios</a></div></div></div>
-<footer><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo" style="font-size:1.2rem">
-    <img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:32px;width:auto;object-fit:contain;mix-blend-mode:screen"></a><p>Agencia de publicidad digital en Colón, Buenos Aires.</p><div class="footer-socials"><a href="#" class="fsoc">📸</a><a href="#" class="fsoc">👍</a><a href="#" class="fsoc">💬</a><a href="#" class="fsoc">💼</a></div></div><div class="footer-col"><h4>Páginas</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="automatizaciones.html">Automatizaciones</a></li><li><a href="pantallas.html">Pantallas</a></li><li><a href="diseno-web.html">Diseño Web</a></li></ul></div><div class="footer-col"><h4>Servicios</h4><ul><li><a href="#">Meta Ads</a></li><li><a href="#">Google Ads</a></li><li><a href="#">WhatsApp Business</a></li><li><a href="#">Community Mgmt</a></li></ul></div><div class="footer-col"><h4>Contacto</h4><ul><li><a href="mailto:info@publicidadviraliza.com">info@publicidadviraliza.com</a></li><li><a href="#">WhatsApp</a></li><li><a href="#">Colón, Bs. As.</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 Viraliza. Todos los derechos reservados.</p></div></footer>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom:.5rem">
+        <img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:28px;width:auto;object-fit:contain;mix-blend-mode:screen">
+      </a>
+      <p>Agencia de publicidad digital en Colón, Buenos Aires.</p>
+      <div class="footer-socials"><a href="#" class="fsoc">📸</a><a href="#" class="fsoc">👍</a><a href="#" class="fsoc">💬</a><a href="#" class="fsoc">💼</a></div>
+    </div>
+    <div class="footer-col"><h4>Páginas</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="automatizaciones.html">Automatizaciones</a></li><li><a href="pantallas.html">Pantallas</a></li><li><a href="diseno-web.html">Diseño Web</a></li></ul></div>
+    <div class="footer-col"><h4>Servicios</h4><ul><li><a href="#">Meta Ads</a></li><li><a href="#">Google Ads</a></li><li><a href="#">WhatsApp Business</a></li><li><a href="#">Community Mgmt</a></li></ul></div>
+    <div class="footer-col"><h4>Contacto</h4><ul><li><a href="mailto:info@publicidadviraliza.com">info@publicidadviraliza.com</a></li><li><a href="https://wa.me/5493416641391">WhatsApp</a></li><li><a href="#">Colón, Bs. As.</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Viraliza. Todos los derechos reservados.</p></div>
+</footer>
+
 <!-- WhatsApp flotante -->
 <a href="https://wa.me/5493416641391" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
   <span class="wa-tooltip">¡Hablemos por WhatsApp!</span>
   <div class="wa-btn">
     <div class="wa-pulse"></div>
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </div>
 </a>
 
 <script src="assets/js/main.js"></script>
-
 <script>
-// Slider de Servicios
-(function() {
-  var sliderEl = document.getElementById('srvSlider');
-  if (!sliderEl) return;
-  var slides = sliderEl.querySelectorAll('.slide');
-  var total = slides.length;
-  if (total === 0) return;
-  var current = 0, timer = null, dur = 5500;
-
-  var dotsEl = document.getElementById('srvDots');
-  var dotBtns = [];
-  if (dotsEl) {
-    for (var i = 0; i < total; i++) {
-      var d = document.createElement('button');
-      d.className = 'sdot' + (i === 0 ? ' active' : '');
-      d.setAttribute('aria-label', 'Slide ' + (i+1));
-      (function(idx){ d.addEventListener('click', function(){ go(idx); }); })(i);
-      dotsEl.appendChild(d);
-      dotBtns.push(d);
-    }
-  }
-
-  var bar = document.getElementById('srvProgress');
-  function startBar() {
-    if (!bar) return;
-    bar.style.transition = 'none'; bar.style.width = '0%';
-    setTimeout(function(){ bar.style.transition = 'width ' + dur + 'ms linear'; bar.style.width = '100%'; }, 50);
-  }
-
-  function go(n) {
-    slides[current].classList.remove('active');
-    if (dotBtns[current]) dotBtns[current].classList.remove('active');
-    current = ((n % total) + total) % total;
-    slides[current].classList.add('active');
-    if (dotBtns[current]) dotBtns[current].classList.add('active');
-    startBar();
-    clearInterval(timer);
-    timer = setInterval(function(){ go(current + 1); }, dur);
-  }
-
-  window.srvMove = function(dir) { go(current + dir); };
-  startBar();
-  timer = setInterval(function(){ go(current + 1); }, dur);
-})();
+var srvSlides = document.querySelectorAll('#srvSlider .slide');
+var srvTotal = srvSlides.length;
+var srvCur = 0;
+var srvTimer = null;
+var srvDur = 5500;
+var srvDotEls = [];
+var dc = document.getElementById('srvDots');
+for(var i=0;i<srvTotal;i++){
+  var d=document.createElement('div');
+  d.style.cssText='width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.3);cursor:pointer;transition:width .4s,background .4s';
+  (function(idx){d.addEventListener('click',function(){srvGo(idx);});})(i);
+  dc.appendChild(d); srvDotEls.push(d);
+}
+function srvBar(){
+  var b=document.getElementById('srvProg');
+  if(!b)return;
+  b.style.transition='none';b.style.width='0%';
+  setTimeout(function(){b.style.transition='width '+srvDur+'ms linear';b.style.width='100%';},50);
+}
+function srvGo(n){
+  srvSlides[srvCur].style.display='none';
+  srvDotEls[srvCur].style.width='8px';srvDotEls[srvCur].style.background='rgba(255,255,255,.3)';
+  srvCur=((n%srvTotal)+srvTotal)%srvTotal;
+  srvSlides[srvCur].style.display='block';
+  srvDotEls[srvCur].style.width='28px';srvDotEls[srvCur].style.background='#ff8b00';
+  srvBar(); clearInterval(srvTimer);
+  srvTimer=setInterval(function(){srvGo(srvCur+1);},srvDur);
+}
+srvDotEls[0].style.width='28px';srvDotEls[0].style.background='#ff8b00';
+srvBar(); srvTimer=setInterval(function(){srvGo(srvCur+1);},srvDur);
 </script>
-
-</body></html>
-
-<!-- SERVICIOS SLIDER -->
-<div class="slideshow" id="srvSlider" style="height:420px">
-
-  <!-- Slide 1: Meta Ads Dashboard -->
-  <div class="slide active" id="ss0">
-    <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0a0f1a 0%,#001a3d 50%,#090b0f 100%)"></div>
-    <!-- Meta Ads visual -->
-    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;padding:0 5% 0 0;pointer-events:none">
-      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;width:min(480px,55%);backdrop-filter:blur(8px)">
-        <!-- Meta Ads card header -->
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
-          <div style="width:32px;height:32px;background:#1877f2;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px">📘</div>
-          <div>
-            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;color:#fff">Meta Ads Manager</div>
-            <div style="font-size:10px;color:rgba(255,255,255,.45)">publicidadviraliza.com</div>
-          </div>
-          <div style="margin-left:auto;padding:3px 10px;background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.3);border-radius:99px;font-size:9px;font-weight:700;color:#34d399">● Activa</div>
-        </div>
-        <!-- Metrics row -->
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px">
-          <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:12px 10px;text-align:center">
-            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:800;color:#ff8b00">248K</div>
-            <div style="font-size:9px;color:rgba(255,255,255,.45);margin-top:2px">Alcance</div>
-            <div style="font-size:9px;color:#34d399;margin-top:2px">↑ +34%</div>
-          </div>
-          <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:12px 10px;text-align:center">
-            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:800;color:#0086ff">1,847</div>
-            <div style="font-size:9px;color:rgba(255,255,255,.45);margin-top:2px">Conversiones</div>
-            <div style="font-size:9px;color:#34d399;margin-top:2px">↑ +22%</div>
-          </div>
-          <div style="background:rgba(255,255,255,.05);border-radius:10px;padding:12px 10px;text-align:center">
-            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:800;color:#ff8b00">4.8x</div>
-            <div style="font-size:9px;color:rgba(255,255,255,.45);margin-top:2px">ROAS</div>
-            <div style="font-size:9px;color:#34d399;margin-top:2px">↑ Óptimo</div>
-          </div>
-        </div>
-        <!-- Mini bar chart -->
-        <div style="background:rgba(255,255,255,.04);border-radius:10px;padding:12px">
-          <div style="font-size:9px;color:rgba(255,255,255,.4);margin-bottom:8px;font-weight:600">RENDIMIENTO MENSUAL</div>
-          <div style="display:flex;align-items:flex-end;gap:5px;height:44px">
-            <div style="flex:1;border-radius:3px 3px 0 0;background:#ff8b00;opacity:.3;height:40%"></div>
-            <div style="flex:1;border-radius:3px 3px 0 0;background:#0086ff;opacity:.4;height:55%"></div>
-            <div style="flex:1;border-radius:3px 3px 0 0;background:#ff8b00;opacity:.5;height:65%"></div>
-            <div style="flex:1;border-radius:3px 3px 0 0;background:#0086ff;opacity:.6;height:75%"></div>
-            <div style="flex:1;border-radius:3px 3px 0 0;background:#ff8b00;opacity:.7;height:82%"></div>
-            <div style="flex:1;border-radius:3px 3px 0 0;background:#0086ff;opacity:.8;height:90%"></div>
-            <div style="flex:1;border-radius:3px 3px 0 0;background:#ff8b00;height:100%"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="slide-overlay" style="background:linear-gradient(160deg,rgba(9,11,15,.8) 0%,rgba(9,11,15,.1) 50%,rgba(9,11,15,.5) 100%)"></div>
-    <div class="slide-content">
-      <div class="slide-text">
-        <div class="slide-tag">📊 Meta Ads & Google Ads</div>
-        <h2 class="slide-title">Campañas que<br><em>miden resultados reales</em></h2>
-        <p class="slide-desc">Gestionamos tus campañas con foco total en el retorno. Dashboard de métricas en tiempo real para cada cliente.</p>
-        <div class="slide-actions">
-          <a href="#publicidad-section" class="btn-primary">Ver servicios de publicidad <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          <a href="https://wa.me/5493416641391" class="btn-secondary" target="_blank">📲 Consultanos</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Slide 2: Equipo trabajando -->
-  <div class="slide" id="ss1">
-    <img class="slide-img" src="assets/img/servicio/s4.webp" alt="Equipo Viraliza">
-    <div class="slide-overlay"></div>
-    <div class="slide-content">
-      <div class="slide-text">
-        <div class="slide-tag">👥 Nuestro equipo</div>
-        <h2 class="slide-title">Un equipo que<br><em>trabaja por tu marca</em></h2>
-        <p class="slide-desc">Estrategas, diseñadores y gestores dedicados a hacer crecer tu negocio digital. Soporte real, no robots.</p>
-        <div class="slide-actions">
-          <a href="https://wa.me/5493416641391" class="btn-primary" target="_blank">📲 Hablar con el equipo</a>
-          <a href="index.html#testimonios" class="btn-secondary">Ver resultados de clientes</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Slide 3: WhatsApp Business -->
-  <div class="slide" id="ss2">
-    <img class="slide-img" src="assets/img/servicio/s7.webp" alt="WhatsApp Business">
-    <div class="slide-overlay"></div>
-    <div class="slide-content">
-      <div class="slide-text">
-        <div class="slide-tag">💬 WhatsApp Business</div>
-        <h2 class="slide-title">Campañas que llegan<br><em>directo al celular</em></h2>
-        <p class="slide-desc">Mensajes masivos personalizados, catálogo de productos y atención automatizada vía WhatsApp Business API.</p>
-        <div class="slide-actions">
-          <a href="automatizaciones.html" class="btn-primary">Ver automatizaciones <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <button class="slide-arrow prev" onclick="srvMove(-1)" aria-label="Anterior">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-  </button>
-  <button class="slide-arrow next" onclick="srvMove(1)" aria-label="Siguiente">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
-  </button>
-  <div id="srvDots" style="position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:.5rem;z-index:20"></div>
-  <div id="srvProgress" style="position:absolute;bottom:0;left:0;height:3px;background:linear-gradient(90deg,#ff8b00,#0086ff);width:0%;z-index:20"></div>
-</div>
-<!-- FIN SERVICIOS SLIDER -->
-
-
-
-
+</body>
+</html>

@@ -4,59 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pantallas Digitales — Viraliza</title>
-  <meta name="description" content="Publicidad en pantallas digitales y LED. Alta visibilidad en los puntos estratégicos de mayor tráfico.">
+  <meta name="description" content="Publicidad en pantallas LED digitales. Alta visibilidad en los puntos estratégicos de Colón, Buenos Aires.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    .specs-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1px; background: var(--border);
-      border: 1px solid var(--border); border-radius: var(--radius);
-      overflow: hidden; margin-top: 3rem;
-    }
-    .spec-item {
-      background: var(--surface); padding: 2rem;
-      transition: background var(--transition);
-    }
-    .spec-item:hover { background: var(--surface2); }
-    .spec-num {
-      font-family: var(--font-head); font-size: 2.5rem; font-weight: 800;
-      color: var(--accent); line-height: 1;
-    }
-    .spec-label { font-size: .85rem; color: var(--muted); margin-top: .4rem; }
-    .location-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem; margin-top: 3rem;
-    }
-    .location-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      transition: transform var(--transition), border-color var(--transition);
-    }
-    .location-card:hover { transform: translateY(-3px); border-color: rgba(0,229,160,.3); }
-    .location-thumb {
-      height: 160px; display: flex; align-items: center; justify-content: center;
-      font-size: 3.5rem; position: relative;
-    }
-    .location-thumb.c1 { background: linear-gradient(135deg, #1a0533, #0d1f3c); }
-    .location-thumb.c2 { background: linear-gradient(135deg, #0d2b1a, #1a1a0d); }
-    .location-thumb.c3 { background: linear-gradient(135deg, #2b0d0d, #1a0d2b); }
-    .location-thumb.c4 { background: linear-gradient(135deg, #0d1f3c, #0d2b1a); }
-    .location-info { padding: 1.5rem; }
-    .location-info h3 { font-family: var(--font-head); font-weight: 700; color: var(--white); margin-bottom: .3rem; }
-    .location-info p { font-size: .88rem; color: var(--muted); }
-    .location-meta { display: flex; gap: .5rem; margin-top: 1rem; flex-wrap: wrap; }
-    .meta-badge {
-      padding: .2rem .7rem; background: rgba(0,229,160,.08); border: 1px solid rgba(0,229,160,.15);
-      border-radius: 99px; font-size: .72rem; font-weight: 600; color: var(--accent);
-    }
+    :root { --acc:#ff8b00; --a2:#0086ff; --bg:#090b0f; --bg2:#0e1117; --brd:rgba(255,255,255,.08); --mut:#636a7e; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:#c8ccd8;font-family:'Inter',sans-serif;overflow-x:hidden}
+    .sec{padding:clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,3rem)}
+    .sec-alt{background:var(--bg2)}
+    .container{max-width:1160px;margin:0 auto}
+    .bdg{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(255,139,0,.12);color:var(--acc);font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border-radius:99px;margin-bottom:1rem}
+    .bdg::before{content:'';width:5px;height:5px;background:var(--acc);border-radius:50%}
+    .sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.03em;margin-bottom:.8rem}
+    .sec-title em{font-style:normal;background:linear-gradient(135deg,#ff8b00,#0086ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .sec-sub{font-size:1rem;color:var(--mut);max-width:520px;line-height:1.8}
+    /* Photo cards */
+    .pcard{position:relative;border-radius:14px;overflow:hidden;background:var(--bg2);border:1px solid var(--brd);transition:transform .3s,border-color .3s}
+    .pcard:hover{transform:translateY(-3px);border-color:rgba(255,139,0,.25)}
+    .pcard img{display:block;width:100%;height:200px;object-fit:cover;filter:brightness(.72)}
+    .pcard-body{padding:1.2rem 1.4rem}
+    .pcard-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#fff;margin-bottom:.4rem}
+    .pcard-desc{font-size:.85rem;color:var(--mut);line-height:1.6;margin-bottom:.8rem}
+    .badge-tag{display:inline-block;padding:.2rem .7rem;background:rgba(255,139,0,.1);color:var(--acc);border:1px solid rgba(255,139,0,.2);border-radius:99px;font-size:.72rem;font-weight:600;margin:.2rem .2rem 0 0}
+    /* Stats */
+    .stat-box{background:var(--bg2);border:1px solid var(--brd);border-radius:14px;padding:1.5rem;text-align:center}
+    .stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.2rem;font-weight:800;color:var(--acc);line-height:1}
+    .stat-lbl{font-size:.82rem;color:var(--mut);margin-top:.4rem}
+    .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+    .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}
   </style>
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:32px;width:auto;object-fit:contain;mix-blend-mode:screen"></a>
+    <img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:34px;width:auto;object-fit:contain;mix-blend-mode:screen">
+  </a>
   <ul class="nav-links">
     <li><a href="index.html">Inicio</a></li>
     <li><a href="servicios.html">Servicios</a></li>
@@ -68,194 +52,107 @@
   <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
 
-<div class="page-hero">
-  <div class="page-hero-bg" style="background:radial-gradient(ellipse 70% 70% at 50% 30%, rgba(255,77,109,.12) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 10% 80%, rgba(124,58,237,.1) 0%, transparent 55%), var(--bg)"></div>
-  <div class="container">
-    <div>
-      <div class="section-tag">Publicidad Exterior Digital</div>
-      <h1 class="page-hero-title">Pantallas<br><em>Digitales</em></h1>
-    </div>
-    <p class="page-hero-desc">Visibilidad máxima en los puntos de mayor tráfico. Tu marca en pantallas LED que no pasan desapercibidas.</p>
+<!-- HERO CON FOTO -->
+<div style="position:relative;height:60vh;min-height:400px;overflow:hidden;background:#090b0f">
+  <img src="assets/img/servicio/s2.jpeg" alt="Pantalla LED Viraliza" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:brightness(.45)">
+  <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(9,11,15,.75) 0%,rgba(9,11,15,.2) 45%,rgba(9,11,15,.7) 100%)"></div>
+  <div style="position:absolute;bottom:0;left:0;right:0;padding:clamp(2rem,5vw,4rem) clamp(1.5rem,5vw,3rem);background:linear-gradient(to top,rgba(9,11,15,.95),transparent)">
+    <div class="bdg">Publicidad Exterior Digital</div>
+    <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2rem,6vw,4rem);font-weight:800;color:#fff;line-height:1.04;letter-spacing:-.04em;margin-bottom:.8rem">Pantallas <em style="font-style:normal;background:linear-gradient(135deg,#ff8b00,#0086ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Digitales</em></h1>
+    <p style="font-size:1rem;color:rgba(255,255,255,.72);max-width:440px;line-height:1.8">Tu marca en pantallas LED de alta visibilidad. Los puntos de mayor tráfico de Colón, Buenos Aires.</p>
   </div>
 </div>
 
 <!-- STATS -->
-<section>
+<div class="sec">
   <div class="container">
-    <div class="fade-in">
-      <div class="section-tag">Nuestro alcance</div>
-      <h2 class="section-title">Números que <em>impactan</em></h2>
-    </div>
-    <div class="specs-grid fade-in">
-      <div class="spec-item">
-        <div class="spec-num"><span data-target="15">0</span>+</div>
-        <div class="spec-label">Pantallas activas en la región</div>
-      </div>
-      <div class="spec-item">
-        <div class="spec-num"><span data-target="500">0</span>K</div>
-        <div class="spec-label">Personas impactadas por mes</div>
-      </div>
-      <div class="spec-item">
-        <div class="spec-num"><span data-target="24">0</span>hs</div>
-        <div class="spec-label">Funcionamiento continuo</div>
-      </div>
-      <div class="spec-item">
-        <div class="spec-num"><span data-target="4">0</span>K</div>
-        <div class="spec-label">Resolución de pantallas premium</div>
-      </div>
+    <div class="grid4">
+      <div class="stat-box"><div class="stat-num">15+</div><div class="stat-lbl">Pantallas activas en la región</div></div>
+      <div class="stat-box"><div class="stat-num" style="color:#0086ff">500K</div><div class="stat-lbl">Personas impactadas por mes</div></div>
+      <div class="stat-box"><div class="stat-num">24hs</div><div class="stat-lbl">Funcionamiento continuo</div></div>
+      <div class="stat-box"><div class="stat-num" style="color:#0086ff">4K</div><div class="stat-lbl">Resolución de pantallas</div></div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- UBICACIONES -->
-<section style="padding-top:0">
+<div class="sec sec-alt">
   <div class="container">
-    <div class="fade-in">
-      <div class="section-tag">Ubicaciones estratégicas</div>
-      <h2 class="section-title">Donde está <em>tu cliente</em></h2>
-      <p class="section-sub">Seleccionamos los puntos de mayor tráfico y visibilidad para que tu publicidad llegue a la mayor cantidad de personas.</p>
-    </div>
-    <div class="location-grid">
-      <div class="location-card fade-in fade-in-delay-1">
-        <div style="height:180px;overflow:hidden;position:relative"><img src="assets/img/servicio/s2.jpeg" alt="Pantalla Centro" style="width:100%;height:100%;object-fit:cover;filter:brightness(.72)"></div>
-        <div class="location-info">
-          <h3>Centro Comercial</h3>
-          <p>Pantallas en los accesos y pasillos de mayor circulación del centro de la ciudad.</p>
-          <div class="location-meta">
-            <span class="meta-badge">Alta rotación</span>
-            <span class="meta-badge">LED 4K</span>
-            <span class="meta-badge">10m²</span>
-          </div>
+    <div class="bdg">Ubicaciones estratégicas</div>
+    <h2 class="sec-title">Donde está <em>tu cliente</em></h2>
+    <p class="sec-sub" style="margin-bottom:2rem">Seleccionamos los puntos de mayor tráfico y visibilidad para tu publicidad.</p>
+    <div class="grid2">
+      <div class="pcard">
+        <img src="assets/img/servicio/s2.jpeg" alt="Pantalla Centro Comercial">
+        <div class="pcard-body">
+          <div class="pcard-title">Centro Comercial</div>
+          <div class="pcard-desc">Pantallas en los accesos y pasillos de mayor circulación del centro de Colón.</div>
+          <span class="badge-tag">Alta rotación</span><span class="badge-tag">LED 4K</span><span class="badge-tag">10m²</span>
         </div>
       </div>
-      <div class="location-card fade-in fade-in-delay-2">
-        <div style="height:180px;overflow:hidden;position:relative"><img src="assets/img/servicio/s9.webp" alt="Pantalla Ruta" style="width:100%;height:100%;object-fit:cover;filter:brightness(.72)"></div>
-        <div class="location-info">
-          <h3>Rutas Principales</h3>
-          <p>Vallas digitales en los accesos y rutas de mayor tráfico vehicular de la zona.</p>
-          <div class="location-meta">
-            <span class="meta-badge">Ruta 8</span>
-            <span class="meta-badge">Gran formato</span>
-            <span class="meta-badge">24hs</span>
-          </div>
+      <div class="pcard">
+        <img src="assets/img/servicio/s9.webp" alt="Pantalla Ruta">
+        <div class="pcard-body">
+          <div class="pcard-title">Rutas Principales</div>
+          <div class="pcard-desc">Vallas digitales en los accesos y rutas de mayor tráfico vehicular de la zona.</div>
+          <span class="badge-tag">Ruta 8</span><span class="badge-tag">Gran formato</span><span class="badge-tag">24hs</span>
         </div>
       </div>
-      <div class="location-card fade-in fade-in-delay-3">
-        <div style="height:180px;overflow:hidden;position:relative"><img src="assets/img/servicio/s6.webp" alt="Pantalla Deportivo" style="width:100%;height:100%;object-fit:cover;filter:brightness(.72)"></div>
-        <div class="location-info">
-          <h3>Centros Deportivos</h3>
-          <p>Pantallas interiores en gimnasios, canchas y clubes con alta afluencia de público joven.</p>
-          <div class="location-meta">
-            <span class="meta-badge">Público joven</span>
-            <span class="meta-badge">Interior</span>
-            <span class="meta-badge">HD</span>
-          </div>
+      <div class="pcard">
+        <img src="assets/img/servicio/s6.webp" alt="Centros Deportivos">
+        <div class="pcard-body">
+          <div class="pcard-title">Centros Deportivos</div>
+          <div class="pcard-desc">Gimnasios, canchas y clubes con alta afluencia de público joven y activo.</div>
+          <span class="badge-tag">Público joven</span><span class="badge-tag">Interior</span><span class="badge-tag">HD</span>
         </div>
       </div>
-      <div class="location-card fade-in fade-in-delay-1">
-        <div style="height:180px;overflow:hidden;position:relative"><img src="assets/img/servicio/s5.webp" alt="Pantalla Local" style="width:100%;height:100%;object-fit:cover;filter:brightness(.72)"></div>
-        <div class="location-info">
-          <h3>Puntos de Venta</h3>
-          <p>Pantallas en supermercados, farmacias y locales comerciales en el momento de la decisión de compra.</p>
-          <div class="location-meta">
-            <span class="meta-badge">Punto de compra</span>
-            <span class="meta-badge">Máxima conversión</span>
-          </div>
+      <div class="pcard">
+        <img src="assets/img/servicio/s5.webp" alt="Puntos de Venta">
+        <div class="pcard-body">
+          <div class="pcard-title">Puntos de Venta</div>
+          <div class="pcard-desc">Supermercados y farmacias en el momento exacto de la decisión de compra.</div>
+          <span class="badge-tag">Punto de compra</span><span class="badge-tag">Máxima conversión</span>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- SERVICIOS PANTALLAS -->
-<section style="padding-top:0">
+<!-- QUÉ INCLUYE -->
+<div class="sec">
   <div class="container">
-    <div class="fade-in">
-      <div class="section-tag">¿Qué incluye?</div>
-      <h2 class="section-title">Todo en <em>un servicio</em></h2>
-    </div>
-    <div class="services-grid">
-      <div class="service-card fade-in fade-in-delay-1">
-        <div class="card-icon">🎨</div>
-        <div class="card-title">Diseño del aviso</div>
-        <div class="card-desc">Creamos el arte gráfico o el video para tu pantalla, optimizado para el formato y la distancia de visualización.</div>
-      </div>
-      <div class="service-card fade-in fade-in-delay-2">
-        <div class="card-icon">📍</div>
-        <div class="card-title">Selección de ubicación</div>
-        <div class="card-desc">Te asesoramos sobre qué pantallas convienen según tu público objetivo, zona geográfica y presupuesto.</div>
-      </div>
-      <div class="service-card fade-in fade-in-delay-3">
-        <div class="card-icon">📈</div>
-        <div class="card-title">Medición de impacto</div>
-        <div class="card-desc">Reportes de alcance estimado, frecuencia de impacto y combinación con campañas digitales para mayor efectividad.</div>
-      </div>
+    <div class="bdg">¿Qué incluye?</div>
+    <h2 class="sec-title">Todo en <em>un servicio</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:2rem">
+      <div style="background:var(--bg2);border:1px solid var(--brd);border-radius:14px;padding:1.6rem"><div style="width:40px;height:40px;background:rgba(255,139,0,.14);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem">🎨</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.4rem">Diseño del aviso</div><div style="font-size:.87rem;color:var(--mut);line-height:1.7">Creamos el arte gráfico o video para tu pantalla, optimizado para el formato y la distancia de visualización.</div></div>
+      <div style="background:var(--bg2);border:1px solid var(--brd);border-radius:14px;padding:1.6rem"><div style="width:40px;height:40px;background:rgba(0,134,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem">📍</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.4rem">Selección de ubicación</div><div style="font-size:.87rem;color:var(--mut);line-height:1.7">Te asesoramos sobre qué pantallas convienen según tu público objetivo y zona geográfica.</div></div>
+      <div style="background:var(--bg2);border:1px solid var(--brd);border-radius:14px;padding:1.6rem"><div style="width:40px;height:40px;background:rgba(52,211,153,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1rem">📈</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.4rem">Medición de impacto</div><div style="font-size:.87rem;color:var(--mut);line-height:1.7">Reportes de alcance estimado, frecuencia de impacto y combinación con campañas digitales.</div></div>
     </div>
   </div>
-</section>
+</div>
 
-<div class="cta-band fade-in">
-  <div class="cta-band-text">
-    <h2>Consultá disponibilidad de pantallas</h2>
-    <p>Te enviamos ubicaciones, precios y disponibilidad en el día.</p>
+<!-- CTA -->
+<div class="sec">
+  <div style="background:linear-gradient(135deg,#ff8b00,#0086ff);border-radius:18px;padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem);display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;max-width:1160px;margin:0 auto">
+    <div><h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:#fff;margin-bottom:.5rem">Consultá disponibilidad</h2><p style="color:rgba(255,255,255,.8)">Te enviamos ubicaciones y precios en el día.</p></div>
+    <a href="https://wa.me/5493416641391" target="_blank" style="padding:.85rem 2rem;background:#fff;color:#ff8b00;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;border-radius:10px;text-decoration:none;white-space:nowrap">📲 Consultar precios</a>
   </div>
-  <a href="https://wa.me/5493416641391" class="btn-white" target="_blank">📲 Consultar precios</a>
 </div>
 
 <footer>
   <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="nav-logo" style="margin-bottom:.8rem"><img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:40px;width:auto;object-fit:contain;mix-blend-mode:screen"></div>
-      <p>Agencia de publicidad digital especializada en hacer crecer marcas con estrategia, creatividad y tecnología.</p>
-      <div class="footer-socials">
-        <a href="#" class="social-btn">📸</a><a href="#" class="social-btn">👍</a>
-        <a href="#" class="social-btn">💬</a><a href="#" class="social-btn">💼</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Navegación</h4>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="automatizaciones.html">Automatizaciones</a></li>
-        <li><a href="pantallas.html">Pantallas</a></li>
-        <li><a href="diseno-web.html">Diseño Web</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Pantallas</h4>
-      <ul>
-        <li><a href="#">Centro Comercial</a></li>
-        <li><a href="#">Rutas Principales</a></li>
-        <li><a href="#">Centros Deportivos</a></li>
-        <li><a href="#">Puntos de Venta</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contacto</h4>
-      <ul>
-        <li><a href="mailto:info@publicidadviraliza.com">info@publicidadviraliza.com</a></li>
-        <li><a href="https://wa.me/5493416641391">WhatsApp</a></li>
-        <li><a href="#">Colón, Bs. As.</a></li>
-      </ul>
-    </div>
+    <div class="footer-brand"><a href="index.html" class="nav-logo" style="margin-bottom:.5rem"><img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:28px;width:auto;object-fit:contain;mix-blend-mode:screen"></a><p>Agencia de publicidad digital en Colón, Buenos Aires.</p><div class="footer-socials"><a href="#" class="fsoc">📸</a><a href="#" class="fsoc">👍</a><a href="#" class="fsoc">💬</a><a href="#" class="fsoc">💼</a></div></div>
+    <div class="footer-col"><h4>Páginas</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="automatizaciones.html">Automatizaciones</a></li><li><a href="pantallas.html">Pantallas</a></li><li><a href="diseno-web.html">Diseño Web</a></li></ul></div>
+    <div class="footer-col"><h4>Pantallas</h4><ul><li><a href="#">Centro Comercial</a></li><li><a href="#">Rutas Principales</a></li><li><a href="#">Centros Deportivos</a></li><li><a href="#">Puntos de Venta</a></li></ul></div>
+    <div class="footer-col"><h4>Contacto</h4><ul><li><a href="mailto:info@publicidadviraliza.com">info@publicidadviraliza.com</a></li><li><a href="https://wa.me/5493416641391">WhatsApp</a></li><li><a href="#">Colón, Bs. As.</a></li></ul></div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2026 Viraliza. Todos los derechos reservados.</p>
-    <p>Hecho con ❤️ para marcas que quieren crecer</p>
-  </div>
+  <div class="footer-bottom"><p>© 2026 Viraliza. Todos los derechos reservados.</p></div>
 </footer>
-<!-- WhatsApp flotante -->
+
 <a href="https://wa.me/5493416641391" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
   <span class="wa-tooltip">¡Hablemos por WhatsApp!</span>
-  <div class="wa-btn">
-    <div class="wa-pulse"></div>
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </div>
+  <div class="wa-btn"><div class="wa-pulse"></div><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
 </a>
-
 <script src="assets/js/main.js"></script>
 </body>
 </html>
