@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño Web — Viraliza</title>
+  <meta name="description" content="Sitios web modernos, rápidos y orientados a convertir. Landing pages, sitios corporativos y tiendas online.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    :root { --acc:#ff8b00; --a2:#0086ff; --bg:#090b0f; --bg2:#0e1117; --bg3:#13181f; --brd:rgba(255,255,255,.08); --mut:#636a7e; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:#c8ccd8;font-family:'Inter',sans-serif;overflow-x:hidden}
+    .sec{padding:clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,3rem)}
+    .sec-alt{background:var(--bg2)}
+    .container{max-width:1160px;margin:0 auto}
+    .bdg{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(255,139,0,.12);color:var(--acc);font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border-radius:99px;margin-bottom:1rem}
+    .bdg::before{content:'';width:5px;height:5px;background:var(--acc);border-radius:50%}
+    .sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.03em;margin-bottom:.8rem}
+    .sec-title em{font-style:normal;background:linear-gradient(135deg,#ff8b00,#0086ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .sec-sub{font-size:1rem;color:var(--mut);max-width:520px;line-height:1.8}
+    /* Plan cards */
+    .plan{background:var(--bg2);border:1px solid var(--brd);border-radius:16px;padding:1.8rem;position:relative;transition:transform .3s,border-color .3s}
+    .plan:hover{transform:translateY(-3px);border-color:rgba(255,139,0,.25)}
+    .plan.featured{background:linear-gradient(145deg,#ff8b00 0%,#e06500 100%);border-color:#ff8b00}
+    .plan-name{font-size:.78rem;font-weight:700;color:var(--mut);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem}
+    .plan.featured .plan-name{color:rgba(255,255,255,.65)}
+    .plan-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:.3rem}
+    .plan.featured .plan-title{color:#fff}
+    .plan-sub{font-size:.85rem;color:var(--mut);margin-bottom:1.2rem}
+    .plan.featured .plan-sub{color:rgba(255,255,255,.65)}
+    .plan-feat{display:flex;align-items:center;gap:.6rem;font-size:.87rem;color:#c8ccd8;margin-bottom:.55rem}
+    .plan.featured .plan-feat{color:rgba(255,255,255,.9)}
+    .plan-feat::before{content:'✓';width:16px;height:16px;background:rgba(255,139,0,.15);color:#ff8b00;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:900;flex-shrink:0}
+    .plan.featured .plan-feat::before{background:rgba(255,255,255,.2);color:#fff}
+    .plan-btn{display:block;width:100%;padding:.8rem;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.88rem;cursor:pointer;text-align:center;text-decoration:none;margin-top:1.4rem;border:1.5px solid var(--acc);color:var(--acc);background:transparent;transition:background .2s,color .2s}
+    .plan-btn:hover{background:var(--acc);color:#fff}
+    .plan-btn.w{border-color:#fff;color:#fff;background:rgba(255,255,255,.12)}
+    .plan-btn.w:hover{background:#fff;color:#ff8b00}
+    .plan-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);padding:2px 14px;background:#0086ff;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;font-weight:700;border-radius:99px;white-space:nowrap}
+    .divider{height:1px;background:rgba(255,255,255,.08);margin:1.2rem 0}
+    .plan.featured .divider{background:rgba(255,255,255,.2)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+    /* Portfolio */
+    .pcard{background:var(--bg2);border:1px solid var(--brd);border-radius:14px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+    .pcard:hover{transform:translateY(-3px);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+    .pcard-img{position:relative;height:200px;overflow:hidden}
+    .pcard-img img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:brightness(.78)}
+    .pcard-body{padding:1.2rem 1.4rem}
+    .pcard-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#fff;margin-bottom:.3rem}
+    .pcard-desc{font-size:.83rem;color:var(--mut);line-height:1.6}
+    /* Process */
+    .step{background:var(--bg2);border:1px solid var(--brd);border-radius:14px;padding:1.6rem}
+    .step-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.5rem;font-weight:800;color:rgba(255,255,255,.06);line-height:1;margin-bottom:.8rem}
+    .step-t{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.4rem}
+    .step-d{font-size:.87rem;color:var(--mut);line-height:1.7}
+    /* Tech pills */
+    .pill{padding:6px 14px;background:var(--bg2);border:1px solid var(--brd);border-radius:99px;font-size:.85rem;color:#c8ccd8;display:inline-block;margin:.3rem}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:34px;width:auto;object-fit:contain;mix-blend-mode:screen">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="automatizaciones.html">Automatizaciones</a></li>
+    <li><a href="pantallas.html">Pantallas</a></li>
+    <li><a href="diseno-web.html" class="active">Diseño Web</a></li>
+    <li><a href="https://wa.me/5493416641391" class="nav-cta" target="_blank">Contactar →</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<div style="padding:calc(70px + 4rem) clamp(1.5rem,5vw,3rem) 4rem;background:radial-gradient(ellipse 70% 60% at 30% 60%,rgba(255,139,0,.09),transparent 55%),radial-gradient(ellipse 60% 60% at 80% 20%,rgba(0,134,255,.09),transparent 55%),#090b0f;border-bottom:1px solid rgba(255,255,255,.07)">
+  <div style="max-width:1160px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap">
+    <div>
+      <div class="bdg">Desarrollo & Diseño</div>
+      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800;color:#fff;line-height:1.04;letter-spacing:-.04em">Diseño <em style="font-style:normal;background:linear-gradient(135deg,#ff8b00,#0086ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Web</em></h1>
+    </div>
+    <p style="font-size:1rem;color:#636a7e;max-width:380px;line-height:1.8">Sitios que no solo se ven bien — que convierten visitas en ventas reales.</p>
+  </div>
+</div>
+
+<!-- PORTFOLIO — SLIDER -->
+<div class="sec sec-alt" id="portfolio">
+  <div class="container">
+    <div class="bdg">Portfolio</div>
+    <h2 class="sec-title">Proyectos <em>reales</em></h2>
+    <p class="sec-sub" style="margin-bottom:2.5rem">Desarrollos que ya están funcionando y generando resultados.</p>
+  </div>
+
+  <!-- SLIDER WRAPPER (full-bleed) -->
+  <div class="port-slider-wrap">
+    <div class="port-track" id="portTrack">
+
+      <!-- 1. Sorteos Viraliza -->
+      <div class="port-slide">
+        <div class="port-img-wrap">
+          <div class="port-browser">
+            <div class="port-browser-bar">
+              <span class="pbdot r"></span><span class="pbdot y"></span><span class="pbdot g"></span>
+              <span class="pburl">sorteos.viraliza.tech</span>
+            </div>
+            <div class="port-browser-body" style="background:linear-gradient(135deg,#0d0d1a 0%,#1a0a2e 50%,#0d0d1a 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+              <div style="text-align:center;padding:2rem;position:relative;z-index:2">
+                <div style="width:70px;height:70px;background:linear-gradient(135deg,#7c3aed,#a855f7);border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2rem">🎯</div>
+                <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.4rem">Sorteos Viraliza</div>
+                <div style="font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:1.5rem">Plataforma de sorteos con verificación real</div>
+                <div style="display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap">
+                  <div style="padding:.4rem 1rem;background:rgba(124,58,237,.2);border:1px solid rgba(124,58,237,.4);border-radius:99px;font-size:.75rem;color:#a78bfa">Sorteos verificados</div>
+                  <div style="padding:.4rem 1rem;background:rgba(168,85,247,.2);border:1px solid rgba(168,85,247,.4);border-radius:99px;font-size:.75rem;color:#c084fc">Tiempo real</div>
+                  <div style="padding:.4rem 1rem;background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.4);border-radius:99px;font-size:.75rem;color:#a78bfa">Anti-trampa</div>
+                </div>
+              </div>
+              <div style="position:absolute;top:-30px;right:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(124,58,237,.3),transparent 70%);pointer-events:none"></div>
+              <div style="position:absolute;bottom:-20px;left:-20px;width:120px;height:120px;background:radial-gradient(circle,rgba(168,85,247,.2),transparent 70%);pointer-events:none"></div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-tag" style="background:rgba(124,58,237,.12);color:#a78bfa;border-color:rgba(124,58,237,.25)">App Web</div>
+          <h3 class="port-title">Sorteos Viraliza</h3>
+          <p class="port-desc">Plataforma SaaS de sorteos transparentes y verificables para marcas y creadores de contenido. Conectada a Instagram y TikTok, con validación automática de participantes y sorteo en vivo.</p>
+          <div class="port-feats">
+            <div class="port-feat">✦ Verificación de seguidores reales</div>
+            <div class="port-feat">✦ Sorteo en vivo con animación</div>
+            <div class="port-feat">✦ Dashboard de métricas</div>
+            <div class="port-feat">✦ Certificado de transparencia</div>
+          </div>
+          <div class="port-actions">
+            <a href="https://sorteos.viraliza.tech" target="_blank" rel="noopener" class="port-btn-primary">Ver proyecto →</a>
+            <a href="https://wa.me/5493416641391" target="_blank" rel="noopener" class="port-btn-sec">Quiero algo similar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Turnero Viraliza -->
+      <div class="port-slide">
+        <div class="port-img-wrap">
+          <div class="port-browser">
+            <div class="port-browser-bar">
+              <span class="pbdot r"></span><span class="pbdot y"></span><span class="pbdot g"></span>
+              <span class="pburl">viraliza.tech/turnero</span>
+            </div>
+            <div class="port-browser-body" style="background:linear-gradient(135deg,#071c2e 0%,#0a2a42 50%,#071c2e 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+              <div style="text-align:center;padding:2rem;position:relative;z-index:2">
+                <div style="width:70px;height:70px;background:linear-gradient(135deg,#0086ff,#38bdf8);border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2rem">📅</div>
+                <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.4rem">Sistema de Turnos</div>
+                <div style="font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:1.5rem">Gestión de citas online para profesionales</div>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;max-width:260px;margin:0 auto">
+                <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.4rem;font-size:.72rem;color:rgba(255,255,255,.5);text-align:center">Lun</div>
+                <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.4rem;font-size:.72rem;color:rgba(255,255,255,.5);text-align:center">Mar</div>
+                <div style="background:rgba(0,134,255,.3);border:1px solid rgba(0,134,255,.5);border-radius:8px;padding:.4rem;font-size:.72rem;color:#38bdf8;text-align:center">Mié</div>
+                <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.4rem;font-size:.72rem;color:rgba(255,255,255,.5);text-align:center">Jue</div>
+                <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.4rem;font-size:.72rem;color:rgba(255,255,255,.5);text-align:center">Vie</div>
+                <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.4rem;font-size:.72rem;color:rgba(255,255,255,.5);text-align:center">Sáb</div>
+              </div>
+              </div>
+              <div style="position:absolute;top:-40px;left:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(0,134,255,.2),transparent 70%);pointer-events:none"></div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-tag" style="background:rgba(0,134,255,.12);color:#38bdf8;border-color:rgba(0,134,255,.25)">SaaS</div>
+          <h3 class="port-title">Turnero Online</h3>
+          <p class="port-desc">Sistema de gestión de turnos para profesionales de salud, estética y educación. Los clientes reservan 24/7 desde cualquier dispositivo, con recordatorios automáticos por WhatsApp.</p>
+          <div class="port-feats">
+            <div class="port-feat">✦ Reservas 24/7 sin llamados</div>
+            <div class="port-feat">✦ Recordatorios por WhatsApp</div>
+            <div class="port-feat">✦ Gestión multi-profesional</div>
+            <div class="port-feat">✦ Panel de administración</div>
+          </div>
+          <div class="port-actions">
+            <a href="https://viraliza.tech/turnero" target="_blank" rel="noopener" class="port-btn-primary">Ver proyecto →</a>
+            <a href="https://wa.me/5493416641391" target="_blank" rel="noopener" class="port-btn-sec">Quiero algo similar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. E-commerce Adorhada -->
+      <div class="port-slide">
+        <div class="port-img-wrap">
+          <div class="port-browser">
+            <div class="port-browser-bar">
+              <span class="pbdot r"></span><span class="pbdot y"></span><span class="pbdot g"></span>
+              <span class="pburl">tienda-ecommerce.com</span>
+            </div>
+            <div class="port-browser-body" style="background:#0a0a0a;position:relative;overflow:hidden">
+              <img src="assets/img/desarrollo/ecommerce-hombres.png" alt="E-commerce de zapatillas" style="width:100%;height:100%;object-fit:cover;object-position:top;opacity:.9">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,.7) 100%);pointer-events:none"></div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-tag" style="background:rgba(255,139,0,.12);color:#ff8b00;border-color:rgba(255,139,0,.25)">E-commerce</div>
+          <h3 class="port-title">Tienda Online Completa</h3>
+          <p class="port-desc">E-commerce de zapatillas e indumentaria con catálogo de productos, carrito de compras y pago integrado con MercadoPago. Panel de administración propio para gestionar stock, pedidos y envíos.</p>
+          <div class="port-feats">
+            <div class="port-feat">✦ Catálogo con filtros avanzados</div>
+            <div class="port-feat">✦ MercadoPago + transferencia</div>
+            <div class="port-feat">✦ Panel admin con stock y pedidos</div>
+            <div class="port-feat">✦ Cálculo de envío por provincia</div>
+          </div>
+          <div class="port-actions">
+            <a href="https://wa.me/5493416641391" target="_blank" rel="noopener" class="port-btn-primary">Quiero mi tienda →</a>
+            <a href="https://wa.me/5493416641391" target="_blank" rel="noopener" class="port-btn-sec">Ver más ejemplos</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Sistema de Turnos (d3) -->
+      <div class="port-slide">
+        <div class="port-img-wrap">
+          <div class="port-browser">
+            <div class="port-browser-bar">
+              <span class="pbdot r"></span><span class="pbdot y"></span><span class="pbdot g"></span>
+              <span class="pburl">sistema-personalizado.com</span>
+            </div>
+            <div class="port-browser-body" style="background:#0a0a0a;position:relative;overflow:hidden">
+              <img src="assets/img/desarrollo/d3.jpeg" alt="Sistema personalizado" style="width:100%;height:100%;object-fit:cover;opacity:.9">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(0,0,0,.6) 100%);pointer-events:none"></div>
+            </div>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-tag" style="background:rgba(52,211,153,.12);color:#34d399;border-color:rgba(52,211,153,.25)">Diseño UI/UX</div>
+          <h3 class="port-title">Interfaces a Medida</h3>
+          <p class="port-desc">Diseño y desarrollo de interfaces oscuras, modernas y funcionales para sistemas de gestión. Cada pantalla pensada para mejorar la productividad y la experiencia del usuario.</p>
+          <div class="port-feats">
+            <div class="port-feat">✦ Diseño dark mode premium</div>
+            <div class="port-feat">✦ UX orientada a conversión</div>
+            <div class="port-feat">✦ Responsive para todos los dispositivos</div>
+            <div class="port-feat">✦ Entrega en tiempo récord</div>
+          </div>
+          <div class="port-actions">
+            <a href="https://wa.me/5493416641391" target="_blank" rel="noopener" class="port-btn-primary">Consultá tu proyecto →</a>
+            <a href="https://wa.me/5493416641391" target="_blank" rel="noopener" class="port-btn-sec">Ver portafolio completo</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /port-track -->
+
+    <!-- Arrows -->
+    <button class="port-arrow port-prev" id="portPrev" aria-label="Anterior">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="port-arrow port-next" id="portNext" aria-label="Siguiente">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <!-- Dots -->
+    <div class="port-dots" id="portDots"></div>
+  </div>
+</div>
+
+<style>
+/* ── PORTFOLIO SLIDER ── */
+.port-slider-wrap{position:relative;overflow:hidden;padding:0 0 3rem}
+.port-track{display:flex;transition:transform .55s cubic-bezier(.77,0,.18,1);will-change:transform}
+.port-slide{
+  min-width:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:center;
+  padding:0 clamp(1.5rem,6vw,5rem);
+  max-width:1260px;
+  margin:0 auto;
+}
+@media(max-width:860px){
+  .port-slide{grid-template-columns:1fr;gap:1.5rem;padding:0 1.25rem}
+}
+
+/* Browser mockup */
+.port-img-wrap{position:relative}
+.port-browser{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.port-browser-bar{
+  display:flex;align-items:center;gap:.45rem;
+  background:#1a1d24;border-bottom:1px solid rgba(255,255,255,.07);
+  padding:.6rem 1rem;
+}
+.pbdot{width:11px;height:11px;border-radius:50%;flex-shrink:0}
+.pbdot.r{background:#ff5f57}.pbdot.y{background:#febc2e}.pbdot.g{background:#28c840}
+.pburl{
+  flex:1;text-align:center;
+  font-size:.72rem;color:rgba(255,255,255,.3);
+  font-family:monospace;letter-spacing:.03em;
+  background:rgba(255,255,255,.05);border-radius:5px;
+  padding:.2rem .75rem;margin:0 .5rem;
+}
+.port-browser-body{height:300px}
+@media(max-width:860px){.port-browser-body{height:220px}}
+
+/* Info side */
+.port-tag{
+  display:inline-flex;align-items:center;
+  padding:4px 14px;border-radius:99px;border:1px solid;
+  font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.port-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(1.4rem,3vw,1.85rem);
+  font-weight:800;color:#fff;
+  letter-spacing:-.03em;line-height:1.15;
+  margin-bottom:.85rem;
+}
+.port-desc{font-size:.92rem;color:#636a7e;line-height:1.8;margin-bottom:1.25rem}
+.port-feats{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.75rem}
+.port-feat{font-size:.84rem;color:#9ca3af;display:flex;align-items:center;gap:.5rem}
+.port-feat::before{content:'';width:6px;height:6px;background:var(--acc);border-radius:50%;flex-shrink:0}
+.port-actions{display:flex;gap:.75rem;flex-wrap:wrap}
+.port-btn-primary{
+  padding:.7rem 1.6rem;background:var(--acc);color:#fff;
+  font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.88rem;
+  border-radius:10px;transition:opacity .2s,transform .2s;
+  display:inline-block;
+}
+.port-btn-primary:hover{opacity:.88;transform:translateY(-1px)}
+.port-btn-sec{
+  padding:.7rem 1.4rem;background:transparent;color:#9ca3af;
+  font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.88rem;
+  border-radius:10px;border:1px solid rgba(255,255,255,.12);
+  transition:border-color .2s,color .2s;display:inline-block;
+}
+.port-btn-sec:hover{border-color:rgba(255,255,255,.3);color:#fff}
+
+/* Arrows */
+.port-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .2s;z-index:10;
+}
+.port-arrow:hover{background:rgba(255,139,0,.2);border-color:rgba(255,139,0,.4)}
+.port-prev{left:1rem}.port-next{right:1rem}
+@media(max-width:860px){.port-prev{left:.3rem}.port-next{right:.3rem}}
+
+/* Dots */
+.port-dots{display:flex;justify-content:center;gap:.55rem;padding:2rem 0 0;position:relative;z-index:10}
+.port-dot{
+  width:8px;height:8px;border-radius:99px;
+  background:rgba(255,255,255,.15);border:none;cursor:pointer;
+  transition:background .3s,width .3s;
+}
+.port-dot.active{width:28px;background:var(--acc)}
+</style>
+
+<script>
+(function(){
+  var track = document.getElementById('portTrack');
+  var dotsWrap = document.getElementById('portDots');
+  var slides = track.querySelectorAll('.port-slide');
+  var cur = 0;
+  var total = slides.length;
+  var timer;
+
+  // Build dots
+  slides.forEach(function(_,i){
+    var d = document.createElement('button');
+    d.className = 'port-dot' + (i===0?' active':'');
+    d.setAttribute('aria-label','Proyecto '+(i+1));
+    d.addEventListener('click',function(){ go(i); resetTimer(); });
+    dotsWrap.appendChild(d);
+  });
+
+  function go(n){
+    cur = ((n%total)+total)%total;
+    track.style.transform = 'translateX(-'+cur+'00%)';
+    dotsWrap.querySelectorAll('.port-dot').forEach(function(d,i){ d.classList.toggle('active',i===cur); });
+  }
+
+  function resetTimer(){
+    clearInterval(timer);
+    timer = setInterval(function(){ go(cur+1); }, 5500);
+  }
+
+  document.getElementById('portPrev').addEventListener('click',function(){ go(cur-1); resetTimer(); });
+  document.getElementById('portNext').addEventListener('click',function(){ go(cur+1); resetTimer(); });
+
+  // Touch swipe
+  var sx = 0;
+  track.addEventListener('touchstart',function(e){ sx=e.touches[0].clientX; },{passive:true});
+  track.addEventListener('touchend',function(e){
+    var dx = e.changedTouches[0].clientX - sx;
+    if(Math.abs(dx)>45){ go(dx<0?cur+1:cur-1); resetTimer(); }
+  });
+
+  resetTimer();
+})();
+</script>
+
+<!-- TIPOS DE SITIO -->
+<div class="sec">
+  <div class="container">
+    <div class="bdg">¿Qué tipo necesitás?</div>
+    <h2 class="sec-title">Una web para <em>cada objetivo</em></h2>
+    <p class="sec-sub" style="margin-bottom:2.5rem">Diseñamos según tus metas, tu industria y tu presupuesto.</p>
+    <div class="grid">
+      <div class="plan">
+        <div class="plan-name">Landing Page</div>
+        <div class="plan-title">Conversión máxima</div>
+        <div class="plan-sub">Para campañas publicitarias</div>
+        <div class="divider"></div>
+        <div class="plan-feat">Diseño enfocado en conversión</div>
+        <div class="plan-feat">Formulario de captación de leads</div>
+        <div class="plan-feat">Integración Meta / Google Ads</div>
+        <div class="plan-feat">Mobile-first y rápida</div>
+        <div style="margin-top:1.2rem;padding:3px 12px;background:rgba(255,139,0,.1);color:#ff8b00;border-radius:99px;font-size:.75rem;font-weight:700;display:inline-block">Entrega en 7 días</div>
+        <a href="https://wa.me/5493416641391" target="_blank" class="plan-btn">Pedir presupuesto</a>
+      </div>
+      <div class="plan featured">
+        <div class="plan-badge">✨ Más solicitado</div>
+        <div class="plan-name">Sitio Corporativo</div>
+        <div class="plan-title">Presencia profesional</div>
+        <div class="plan-sub">Completo y personalizado</div>
+        <div class="divider"></div>
+        <div class="plan-feat">Diseño único a tu marca</div>
+        <div class="plan-feat">Múltiples páginas</div>
+        <div class="plan-feat">SEO básico incluido</div>
+        <div class="plan-feat">Blog opcional</div>
+        <div style="margin-top:1.2rem;padding:3px 12px;background:rgba(255,255,255,.15);color:#fff;border-radius:99px;font-size:.75rem;font-weight:700;display:inline-block">Entrega en 14 días</div>
+        <a href="https://wa.me/5493416641391" target="_blank" class="plan-btn w">Pedir presupuesto</a>
+      </div>
+      <div class="plan">
+        <div class="plan-name">Tienda Online</div>
+        <div class="plan-title">Vendé 24/7</div>
+        <div class="plan-sub">E-commerce completo</div>
+        <div class="divider"></div>
+        <div class="plan-feat">Catálogo de productos</div>
+        <div class="plan-feat">MercadoPago / Stripe</div>
+        <div class="plan-feat">Gestión de stock</div>
+        <div class="plan-feat">Panel de administración</div>
+        <div style="margin-top:1.2rem;padding:3px 12px;background:rgba(0,134,255,.1);color:#0086ff;border-radius:99px;font-size:.75rem;font-weight:700;display:inline-block;border:1px solid rgba(0,134,255,.2)">Entrega en 21 días</div>
+        <a href="https://wa.me/5493416641391" target="_blank" class="plan-btn" style="border-color:#0086ff;color:#0086ff">Pedir presupuesto</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TECNOLOGÍAS -->
+<div class="sec">
+  <div class="container">
+    <div class="bdg">Stack tecnológico</div>
+    <h2 class="sec-title">Tecnología <em>moderna</em></h2>
+    <p class="sec-sub" style="margin-bottom:1.5rem">Código limpio, sitios rápidos. Nada de plantillas genéricas.</p>
+    <div>
+      <span class="pill">⚡ HTML / CSS / JS</span>
+      <span class="pill">⚛️ React</span>
+      <span class="pill">🔷 Next.js</span>
+      <span class="pill">🌐 WordPress</span>
+      <span class="pill">🛍️ WooCommerce</span>
+      <span class="pill">☁️ Hostinger</span>
+      <span class="pill">🐙 GitHub</span>
+      <span class="pill">🔍 SEO</span>
+      <span class="pill">💳 MercadoPago</span>
+      <span class="pill">📊 Analytics</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESO -->
+<div class="sec sec-alt">
+  <div class="container">
+    <div class="bdg">Nuestro proceso</div>
+    <h2 class="sec-title">De la idea al <em>lanzamiento</em></h2>
+    <div class="grid" style="margin-top:2rem">
+      <div class="step"><div class="step-num">01</div><div class="step-t">Brief</div><div class="step-d">Entendemos tu negocio, objetivos y audiencia para definir la estrategia del sitio.</div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-t">Diseño</div><div class="step-d">Diseño visual completo. Vos aprobás antes de que escribamos una línea de código.</div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-t">Desarrollo</div><div class="step-d">Construimos el sitio con código limpio, veloz y optimizado para SEO y conversión.</div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-t">Lanzamiento</div><div class="step-d">Publicamos en tu hosting, configuramos dominio, analíticas y te entregamos todo funcionando.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="sec">
+  <div style="background:linear-gradient(135deg,#ff8b00,#0086ff);border-radius:18px;padding:clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,3rem);display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;max-width:1160px;margin:0 auto">
+    <div><h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:#fff;margin-bottom:.5rem">¿Necesitás un sitio nuevo?</h2><p style="color:rgba(255,255,255,.8)">Presupuesto sin compromiso en 24 horas.</p></div>
+    <a href="https://wa.me/5493416641391" target="_blank" style="padding:.85rem 2rem;background:#fff;color:#ff8b00;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;border-radius:10px;text-decoration:none;white-space:nowrap">📲 Pedir presupuesto</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="index.html" class="nav-logo" style="margin-bottom:.5rem"><img src="assets/img/logo/viraliza-logo-real.jpg" alt="Viraliza" style="height:28px;width:auto;object-fit:contain;mix-blend-mode:screen"></a><p>Agencia de publicidad digital en Colón, Buenos Aires.</p><div class="footer-socials"><a href="#" class="fsoc">📸</a><a href="#" class="fsoc">👍</a><a href="#" class="fsoc">💬</a><a href="#" class="fsoc">💼</a></div></div>
+    <div class="footer-col"><h4>Páginas</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="automatizaciones.html">Automatizaciones</a></li><li><a href="pantallas.html">Pantallas</a></li><li><a href="diseno-web.html">Diseño Web</a></li></ul></div>
+    <div class="footer-col"><h4>Diseño Web</h4><ul><li><a href="#">Landing Pages</a></li><li><a href="#">Sitios Corporativos</a></li><li><a href="#">Tiendas Online</a></li><li><a href="#">Portfolio</a></li></ul></div>
+    <div class="footer-col"><h4>Contacto</h4><ul><li><a href="mailto:info@publicidadviraliza.com">info@publicidadviraliza.com</a></li><li><a href="https://wa.me/5493416641391">WhatsApp</a></li><li><a href="#">Colón, Bs. As.</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Viraliza. Todos los derechos reservados.</p></div>
+</footer>
+
+<a href="https://wa.me/5493416641391" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <span class="wa-tooltip">¡Hablemos por WhatsApp!</span>
+  <div class="wa-btn"><div class="wa-pulse"></div><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+</a>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
